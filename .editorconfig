@@ -33,6 +33,7 @@ charset = utf-8-bom
 
 # Markdown Files
 [*.md]
+end_of_line = lf
 trim_trailing_whitespace = false
 
 # Web Files
