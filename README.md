@@ -13,7 +13,7 @@ yarn add -D @neolution-ch/eslint-config-neolution
 
 Edit the `.eslintrc.js` of your project:
 
-```json
+```js
 module.exports = {
   ...
   extends: ["@neolution-ch/eslint-config-neolution"],
@@ -25,7 +25,7 @@ module.exports = {
 
 For React project you might need to adjust the "@typescript-eslint/naming-convention" rule to allow PascalCase for component names.
 
-```json
+```js
 module.exports = {
   ...
   rules: {
@@ -42,3 +42,7 @@ module.exports = {
   ...
 }
 ```
+
+## License
+
+[MIT](LICENSE.md)
