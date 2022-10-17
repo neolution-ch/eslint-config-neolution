@@ -5,6 +5,7 @@ module.exports = {
     "./rules/import",
     "./rules/jsdoc",
     "./rules/react",
+    "./rules/react-hooks",
     "./rules/next",
   ].map(require.resolve)
 };
