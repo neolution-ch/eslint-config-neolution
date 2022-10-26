@@ -16,6 +16,18 @@ module.exports = {
   // View link below for typescript rules documentation
   // https://typescript-eslint.io/rules/
   rules: {
+    // Disallow certain types
+    // https://typescript-eslint.io/rules/ban-types/
+    "@typescript-eslint/ban-types": ["error",{
+      types: {
+        "React.StatelessComponent": { message: "Deprecated: Do not use.", fixWith: "React.ReactElement" },
+        StatelessComponent: { message: "Deprecated: Do not use.", fixWith: "ReactElement" },
+        "React.FC": { message: "Please use ReactElement + PropsWithChildren", fixWith: "ReactElement" },
+        FC: { message: "Please use ReactElement + PropsWithChildren", fixWith: "ReactElement" },
+      },
+      extendDefaults: true,
+    }],
+
     // Enforce one true brace style (same as eslint-config-airbnb-base)
     // https://typescript-eslint.io/rules/brace-style
     "@typescript-eslint/brace-style": ["error", "1tbs", { allowSingleLine: true }],
@@ -108,14 +120,10 @@ module.exports = {
       format: ["PascalCase"],
     }],
 
-    // Disallow empty functions, except for standalone funcs/arrows (same as eslint-config-airbnb-base)
+    // Disallow empty functions
     // https://typescript-eslint.io/rules/no-empty-function
     "@typescript-eslint/no-empty-function": ["error", {
-      allow: [
-        "arrowFunctions",
-        "functions",
-        "methods",
-      ]
+      allow: [],
     }],
 
     // Disallow unnecessary parentheses (same as eslint-config-airbnb-base)
@@ -171,6 +179,11 @@ module.exports = {
     // Require function parameters to be typed as readonly to prevent accidental mutation of inputs
     // https://typescript-eslint.io/rules/prefer-readonly-parameter-types
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
+
+    // Enforce the consistent use of double quotes, but allow single quotes so long as the
+    // string contains a quote that would have to be escaped otherwise
+    // https://typescript-eslint.io/rules/quotes
+    "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
 
     // Require `await` in `async function` (note: this is a horrible rule that should never be used) (same as eslint-config-airbnb-base)
     // https://typescript-eslint.io/rules/require-await

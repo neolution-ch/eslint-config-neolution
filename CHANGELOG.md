@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   Added typescript to the import/resolver
+-   Added deprecated React types to the "ban-types" rule
+-   Added "complexity" rule with a maximum of 20
+-   Added "max-lines" rule with a maximum of 300 lines
+
+### Changed
+
+-   Updated "no-empty-function" rule to not allow any empty function
+-   Updated "quotes" rule by using the typescript version
+-   Updated "react/no-unstable-nested-components" rule to allow component creation inside component props
+
 ## [1.1.0] - 2022-10-17
 
 ### Added
