@@ -21,6 +21,10 @@ module.exports = {
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
     "react/jsx-one-expression-per-line": "off",
 
+    // The airbnb config didn't allow component creation inside component props, but we want to allow it
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md
+    "react/no-unstable-nested-components": ["error", { allowAsProps: true }],
+
     // The airbnb config forces a defaultProps definition for every prop, but we don't want it
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
     "react/require-default-props": "off",
