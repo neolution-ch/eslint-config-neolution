@@ -168,6 +168,10 @@ module.exports = {
     // https://typescript-eslint.io/rules/no-unused-vars
     "@typescript-eslint/no-unused-vars": ["error", { vars: "all", args: "after-used", ignoreRestSiblings: true }],
 
+    // Disable forcing non-null assertions over explicit type casts
+    // https://typescript-eslint.io/rules/non-nullable-type-assertion-style
+    "@typescript-eslint/non-nullable-type-assertion-style": "off",
+
     // Require padding inside curly braces (same as eslint-config-airbnb-base)
     // https://typescript-eslint.io/rules/object-curly-spacing
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
