@@ -1,11 +1,11 @@
 module.exports = {
   extends: [
-    "./rules/eslint",
+    // "./rules/eslint",
+    "./rules/prettier",
     "./rules/typescript",
     "./rules/import",
-    "./rules/jsdoc",
     "./rules/react",
     "./rules/react-hooks",
     "./rules/next",
-  ].map(require.resolve)
+  ].map(require.resolve),
 };

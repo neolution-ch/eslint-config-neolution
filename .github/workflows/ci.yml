@@ -24,6 +24,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn lint
       - run: yarn pack
+      - run: npx pkg-pr-new publish
 
   check-changelog:
     if: github.event.pull_request.draft == false
