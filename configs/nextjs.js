@@ -3,7 +3,8 @@ import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import typeScriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import path from "node:path";
@@ -25,8 +26,9 @@ const nextJsRules = typeScriptEslint.config(
   eslintPluginReact.configs.flat["jsx-runtime"],
   eslintPluginPrettierRecommended,
   ...compat.extends("plugin:@next/next/recommended"),
-  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.warnings,
   ...compat.extends("plugin:react-hooks/recommended"),
+  eslintConfigPrettier,
 );
 
 export default nextJsRules;
