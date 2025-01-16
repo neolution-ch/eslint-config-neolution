@@ -23,6 +23,7 @@ jobs:
           cache: "yarn"
       - run: yarn install --frozen-lockfile
       - run: yarn lint
+      - run: yarn build
       - run: yarn pack
 
   check-changelog:

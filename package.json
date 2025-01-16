@@ -4,22 +4,29 @@
   "description": "This package provides Neolution's .eslintrc as an extensible shared config.",
   "homepage": "https://github.com/neolution-ch/eslint-config-neolution",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "exports": {
-    ".": "./index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "lint": "eslint --cache --max-warnings 0",
     "upgradeAll": "npm-check-updates --packageFile ./package.json -u"
   },
   "repository": {
+    "build": "tsc -b tsconfig.json",
     "type": "git",
     "url": "git+https://github.com/neolution-ch/eslint-config-neolution"
   },
   "license": "MIT",
   "author": "Neolution",
   "dependencies": {
+    "@eslint/eslintrc": "^3.2.0",
     "@next/eslint-plugin-next": "^15.1.4",
+    "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-prettier": "^5.2.2",
     "eslint-plugin-react": "^7.37.4",
@@ -29,13 +36,14 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__eslintrc": "^2.1.2",
     "eclint": "^2.8.1",
     "eslint": "^9.18.0",
-    "eslint-config-prettier": "^10.0.1",
     "npm-check-updates": "^16.3.8",
     "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
     "typescript": "^4.8.4"
   }
 }
