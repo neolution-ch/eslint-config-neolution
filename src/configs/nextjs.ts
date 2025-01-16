@@ -1,5 +1,6 @@
 import esLint from "@eslint/js";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
+// eslint-disable-next-line import-x/no-unresolved
 import typeScriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import-x";

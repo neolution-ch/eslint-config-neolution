@@ -1,3 +1,8 @@
-import neolutionEslintConfig from "./src/index.mts";
+import neolutionEslintConfig from "./dist/index.js";
 
-export default [...neolutionEslintConfig.configs.flat.nextjs];
+export default [
+  {
+    ignores: ["dist/"],
+  },
+  ...neolutionEslintConfig.configs.flat.nextjs,
+];

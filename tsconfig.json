@@ -22,5 +22,4 @@
     "resolveJsonModule": true
   },
   "include": ["src"],
-  "exclude": ["tests/fixtures"],
 }
