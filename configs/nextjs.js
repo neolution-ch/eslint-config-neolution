@@ -24,11 +24,11 @@ const nextJsRules = typeScriptEslint.config(
   eslintPluginUnicorn.configs["flat/recommended"],
   eslintPluginReact.configs.flat.recommended,
   eslintPluginReact.configs.flat["jsx-runtime"],
+  eslintConfigPrettier,
   ...compat.extends("plugin:prettier/recommended"),
   ...compat.extends("plugin:@next/next/recommended"),
   importPlugin.flatConfigs.recommended,
   ...compat.extends("plugin:react-hooks/recommended"),
-  eslintConfigPrettier,
 );
 
 export default nextJsRules;
