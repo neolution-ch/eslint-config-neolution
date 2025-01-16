@@ -13,11 +13,11 @@
     "./package.json": "./package.json"
   },
   "scripts": {
+    "build": "tsc -b tsconfig.json",
     "lint": "eslint --cache --max-warnings 0",
     "upgradeAll": "npm-check-updates --packageFile ./package.json -u"
   },
   "repository": {
-    "build": "tsc -b tsconfig.json",
     "type": "git",
     "url": "git+https://github.com/neolution-ch/eslint-config-neolution"
   },
