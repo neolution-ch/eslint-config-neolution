@@ -1,11 +1,11 @@
-module.exports = {
-  extends: [
-    "./rules/eslint",
-    "./rules/typescript",
-    "./rules/import",
-    "./rules/jsdoc",
-    "./rules/react",
-    "./rules/react-hooks",
-    "./rules/next",
-  ].map(require.resolve)
+import nextjs from "./configs/nextjs.js";
+
+const configs = {
+  flat: {
+    nextjs,
+  },
+};
+
+export default {
+  configs,
 };
