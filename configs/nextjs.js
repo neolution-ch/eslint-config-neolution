@@ -1,8 +1,8 @@
 import esLint from "@eslint/js";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
+// eslint-disable-next-line import-x/no-unresolved
 import typeScriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import importPlugin from "eslint-plugin-import-x";
 import eslintConfigPrettier from "eslint-config-prettier";
 
@@ -24,9 +24,9 @@ const nextJsRules = typeScriptEslint.config(
   eslintPluginUnicorn.configs["flat/recommended"],
   eslintPluginReact.configs.flat.recommended,
   eslintPluginReact.configs.flat["jsx-runtime"],
-  eslintPluginPrettierRecommended,
+  ...compat.extends("plugin:prettier/recommended"),
   ...compat.extends("plugin:@next/next/recommended"),
-  importPlugin.flatConfigs.warnings,
+  importPlugin.flatConfigs.recommended,
   ...compat.extends("plugin:react-hooks/recommended"),
   eslintConfigPrettier,
 );

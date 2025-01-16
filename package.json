@@ -20,24 +20,22 @@
   "author": "Neolution",
   "dependencies": {
     "@next/eslint-plugin-next": "^15.1.4",
-    "eslint": "^9.18.0",
     "eslint-plugin-prettier": "^5.2.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-unicorn": "^56.0.1",
-    "typescript-eslint": "^8.20.0"
+    "eslint-plugin-unicorn": "^56.0.1"
   },
-  "peerDependencies": {
-    "eslint": "^9.18.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
     "eclint": "^2.8.1",
+    "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import-x": "^4.6.1",
     "npm-check-updates": "^16.3.8",
     "prettier": "^3.4.2",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "typescript-eslint": "^8.20.0"
   }
 }
