@@ -33,10 +33,10 @@ const nextJsRules = config(
   unicornRules,
   eslintPluginReact.configs.flat.recommended,
   eslintPluginReact.configs.flat["jsx-runtime"],
-  ...compat.extends("plugin:prettier/recommended"),
   ...compat.extends("plugin:@next/next/recommended"),
   importPlugin.flatConfigs.recommended,
   ...compat.extends("plugin:react-hooks/recommended"),
+  ...compat.extends("plugin:prettier/recommended"),
 );
 
 export default nextJsRules;
