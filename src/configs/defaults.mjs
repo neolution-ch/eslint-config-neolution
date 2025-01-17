@@ -21,6 +21,26 @@ const defaults = [
       },
     },
   },
+  {
+    ignores: ["**/nextjs-routes.d.ts"],
+  },
+  {
+    rules: {
+      "unicorn/filename-case": "off",
+    },
+  },
+  {
+    files: ["**/pages/**/*.tsx"],
+    rules: {
+      "unicorn/filename-case": ["error", { case: "kebabCase" }],
+    },
+  },
+  {
+    files: ["**/components/**/*.tsx"],
+    rules: {
+      "unicorn/filename-case": ["error", { case: "pascalCase" }],
+    },
+  },
 ];
 
 export default defaults;
