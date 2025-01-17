@@ -3,12 +3,13 @@ import { config } from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
 import unicornRules from "./unicorn.mjs";
+import { fixupConfigRules } from "@eslint/compat";
 
 import { FlatCompat } from "@eslint/eslintrc";
 
 const compat = new FlatCompat();
 
-const javascriptRules = config(
+const javascriptRules = fixupConfigRules(config(
   {
     settings: {
       react: {
@@ -33,6 +34,6 @@ const javascriptRules = config(
   ...compat.extends("plugin:@next/next/recommended"),
   importPlugin.flatConfigs.recommended,
   ...compat.extends("plugin:react-hooks/recommended"),
-);
+));
 
 export default javascriptRules;
