@@ -2,8 +2,8 @@ import esLint from "@eslint/js";
 import { config } from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
-import unicornRules from "./unicorn.mjs";
-import defaults from "./defaults.mjs";
+import unicornRules from "./providers/unicorn.mjs";
+import defaults from "./providers/default.mjs";
 import { fixupConfigRules } from "@eslint/compat";
 
 import { FlatCompat } from "@eslint/eslintrc";
