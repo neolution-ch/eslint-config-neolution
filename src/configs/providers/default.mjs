@@ -2,7 +2,7 @@ import globals from "globals";
 
 const defaults = [
   {
-    ignores: ["**/orval/"],
+    ignores: ["**/orval/", "**/.next/", "**/nextjs-routes.d.ts"],
   },
   {
     settings: {
@@ -27,9 +27,6 @@ const defaults = [
         ...globals.node,
       },
     },
-  },
-  {
-    ignores: ["**/nextjs-routes.d.ts"],
   },
 ];
 
