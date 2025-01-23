@@ -4,6 +4,7 @@ import eslintPluginReact from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
 import unicornRules from "./providers/unicorn.mjs";
 import defaults from "./providers/default.mjs";
+import nextRules from "./providers/next.mjs";
 import { fixupConfigRules } from "@eslint/compat";
 
 import { FlatCompat } from "@eslint/eslintrc";
@@ -18,7 +19,7 @@ const javascriptRules = fixupConfigRules(
     eslintPluginReact.configs.flat.recommended,
     eslintPluginReact.configs.flat["jsx-runtime"],
     ...compat.extends("plugin:prettier/recommended"),
-    ...compat.extends("plugin:@next/next/recommended"),
+    nextRules,
     importPlugin.flatConfigs.recommended,
     ...compat.extends("plugin:react-hooks/recommended"),
   ),

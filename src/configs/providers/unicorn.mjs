@@ -28,6 +28,12 @@ const unicornRules = config(
       "unicorn/filename-case": ["error", { case: "pascalCase" }],
     },
   },
+  {
+    files: ["**/*.js", "**/*.jsx"],
+    rules: {
+      "unicorn/prefer-module": "off",
+    },
+  },
 );
 
 export default unicornRules;
