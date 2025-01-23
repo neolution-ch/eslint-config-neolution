@@ -13,6 +13,7 @@ const unicornRules = config(
   {
     rules: {
       "unicorn/filename-case": "off",
+      "unicorn/prefer-node-protocol": "off",
     },
   },
   {

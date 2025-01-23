@@ -1,3 +1,5 @@
+import globals from "globals";
+
 const defaults = [
   {
     ignores: ["**/orval/"],
@@ -18,6 +20,11 @@ const defaults = [
         node: {
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
+      },
+    },
+    languageOptions: {
+      globals: {
+        ...globals.node,
       },
     },
   },
