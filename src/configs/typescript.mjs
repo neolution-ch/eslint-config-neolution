@@ -1,0 +1,24 @@
+import esLint from "@eslint/js";
+import { config } from "typescript-eslint";
+import importPlugin from "eslint-plugin-import";
+import unicornRules from "./providers/unicorn.mjs";
+import defaults from "./providers/default.mjs";
+import typescriptRules from "./providers/typescript.mjs";
+import { fixupConfigRules } from "@eslint/compat";
+
+import { FlatCompat } from "@eslint/eslintrc";
+
+const compat = new FlatCompat();
+
+const nextJsRules = fixupConfigRules(
+  config(
+    defaults,
+    esLint.configs.recommended,
+    typescriptRules,
+    unicornRules,
+    importPlugin.flatConfigs.recommended,
+    ...compat.extends("plugin:prettier/recommended"),
+  ),
+);
+
+export default nextJsRules;
