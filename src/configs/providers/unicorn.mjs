@@ -17,7 +17,7 @@ const unicornRules = config(
     },
   },
   {
-    files: ["**/pages/**/*.tsx"],
+    files: ["**/pages/**/*.page.tsx"],
     rules: {
       "unicorn/filename-case": ["error", { case: "kebabCase" }],
     },
