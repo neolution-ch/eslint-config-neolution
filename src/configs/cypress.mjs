@@ -7,6 +7,7 @@ import typescriptRules from "./providers/typescript.mjs";
 import importRules from "./providers/importPlugin.mjs";
 import { fixupConfigRules } from "@eslint/compat";
 import pluginCypress from "eslint-plugin-cypress/flat";
+import noOnlyTests from "eslint-plugin-no-only-tests";
 
 import { FlatCompat } from "@eslint/eslintrc";
 
@@ -25,7 +26,10 @@ const cypressRules = fixupConfigRules(
     pluginCypress.configs.recommended,
     {
       plugins: {
-        "no-only-tests": "no-only-tests",
+        "no-only-tests": noOnlyTests,
+      },
+      rules: {
+        "no-only-tests/no-only-tests": "error",
       },
     },
   ),
