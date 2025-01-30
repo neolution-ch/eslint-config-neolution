@@ -7,10 +7,8 @@ const importRules = [
       importPlugin.flatConfigs.recommended,
       importPlugin.flatConfigs.typescript,
     ],
-    settings: {
-      "import/ignore": [
-        ".(scss|less|css)$", // can't parse unprocessed CSS modules
-      ],
+    rules: {
+      "import/no-unresolved": [2, { ignore: [String.raw`\.(scss|less|css)$`] }],
     },
   },
 ];
