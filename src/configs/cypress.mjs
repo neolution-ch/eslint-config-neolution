@@ -1,10 +1,10 @@
 import esLint from "@eslint/js";
 import { config } from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
-import importPlugin from "eslint-plugin-import";
 import unicornRules from "./providers/unicorn.mjs";
 import defaults from "./providers/default.mjs";
 import typescriptRules from "./providers/typescript.mjs";
+import importRules from "./providers/importPlugin.mjs";
 import { fixupConfigRules } from "@eslint/compat";
 import pluginCypress from "eslint-plugin-cypress/flat";
 
@@ -20,7 +20,7 @@ const cypressRules = fixupConfigRules(
     unicornRules,
     eslintPluginReact.configs.flat.recommended,
     eslintPluginReact.configs.flat["jsx-runtime"],
-    importPlugin.flatConfigs.recommended,
+    importRules,
     ...compat.extends("plugin:prettier/recommended"),
     pluginCypress.configs.recommended,
     {
