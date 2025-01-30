@@ -21,6 +21,9 @@ const defaults = [
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       },
+      "import/ignore": [
+        String.raw`\.(scss|less|css)$`, // can't parse unprocessed CSS modules
+      ],
     },
     languageOptions: {
       globals: {
