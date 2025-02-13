@@ -24,6 +24,19 @@ const typescriptRules = config(
       "@typescript-eslint/no-require-imports": "off",
     },
   },
+  {
+    rules: {
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          checksVoidReturn: {
+            attributes: false,
+          },
+        },
+      ],
+      "@typescript-eslint/no-floating-promises": "off",
+    },
+  },
 );
 
 export default typescriptRules;
