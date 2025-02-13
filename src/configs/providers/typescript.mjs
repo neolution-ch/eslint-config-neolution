@@ -25,6 +25,7 @@ const typescriptRules = config(
     },
   },
   {
+    files: ["**/*.ts", "**/*.tsx", "**/*.mts"], // We use TS config only for TS files
     rules: {
       "@typescript-eslint/no-misused-promises": [
         "error",
