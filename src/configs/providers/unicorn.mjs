@@ -8,12 +8,9 @@ const unicornRules = config(
       "unicorn/prevent-abbreviations": "off",
       "unicorn/filename-case": "off",
       "unicorn/no-await-expression-member": "off",
-    },
-  },
-  {
-    rules: {
-      "unicorn/filename-case": "off",
       "unicorn/prefer-node-protocol": "off",
+      "unicorn/prefer-global-this": "off",
+      "unicorn/no-null": "off",
     },
   },
   {

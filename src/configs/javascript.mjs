@@ -5,6 +5,8 @@ import unicornRules from "./providers/unicorn.mjs";
 import defaults from "./providers/default.mjs";
 import nextRules from "./providers/next.mjs";
 import { fixupConfigRules } from "@eslint/compat";
+import jsdoc from "eslint-plugin-jsdoc";
+import onlyError from "eslint-plugin-only-error";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import importRules from "./providers/importPlugin.mjs";
@@ -22,6 +24,8 @@ const javascriptRules = fixupConfigRules(
     nextRules,
     importRules,
     ...compat.extends("plugin:react-hooks/recommended"),
+    { plugins: { "only-error": onlyError } },
+    jsdoc.configs["flat/recommended"],
   ),
 );
 
