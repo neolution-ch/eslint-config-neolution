@@ -6,6 +6,7 @@ const jsdocRules = [
     rules: {
       "jsdoc/require-param-type": "off",
       "jsdoc/require-returns-type": "off",
+      "jsdoc/require-jsdoc": "off",
     },
   },
 ];
