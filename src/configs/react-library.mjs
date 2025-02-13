@@ -5,7 +5,7 @@ import unicornRules from "./providers/unicorn.mjs";
 import defaults from "./providers/default.mjs";
 import typescriptRules from "./providers/typescript.mjs";
 import { fixupConfigRules } from "@eslint/compat";
-import jsdoc from "eslint-plugin-jsdoc";
+import jsdocRules from "./providers/jsdoc.mjs";
 import onlyError from "eslint-plugin-only-error";
 
 import { FlatCompat } from "@eslint/eslintrc";
@@ -24,7 +24,7 @@ const reactLibraryRules = fixupConfigRules(
     importRules,
     ...compat.extends("plugin:react-hooks/recommended"),
     ...compat.extends("plugin:prettier/recommended"),
-    jsdoc.configs["flat/recommended"],
+    jsdocRules,
     { plugins: { "only-error": onlyError } },
   ),
 );
