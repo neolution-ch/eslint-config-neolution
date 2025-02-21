@@ -35,7 +35,6 @@ const typescriptRules = config(
           },
         },
       ],
-      "@typescript-eslint/no-floating-promises": "off",
     },
   },
 );
