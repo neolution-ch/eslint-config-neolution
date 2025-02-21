@@ -26,6 +26,11 @@ const reactLibraryRules = fixupConfigRules(
     ...compat.extends("plugin:prettier/recommended"),
     jsdocRules,
     { plugins: { "only-error": onlyError } },
+    {
+      rules: {
+        "unicorn/no-null": "off",
+      },
+    },
   ),
 );
 

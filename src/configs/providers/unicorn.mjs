@@ -10,7 +10,8 @@ const unicornRules = config(
       "unicorn/no-await-expression-member": "off",
       "unicorn/prefer-node-protocol": "off",
       "unicorn/prefer-global-this": "off",
-      "unicorn/no-null": "off",
+      "unicorn/consistent-function-scoping": "off",
+      "unicorn/prefer-query-selector": "off",
     },
   },
   {
