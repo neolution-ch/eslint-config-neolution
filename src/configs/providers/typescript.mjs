@@ -35,6 +35,7 @@ const typescriptRules = config(
           },
         },
       ],
+      "@typescript-eslint/unbound-method": "off",
     },
   },
 );
