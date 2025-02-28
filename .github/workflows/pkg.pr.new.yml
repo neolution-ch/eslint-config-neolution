@@ -20,5 +20,6 @@ jobs:
           node-version: 20
 
       - run: yarn --frozen-lockfile --ignore-engines
+      - run: yarn tsc
 
       - run: npx pkg-pr-new publish

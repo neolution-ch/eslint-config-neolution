@@ -12,6 +12,7 @@ const unicornRules = config(
       "unicorn/prefer-global-this": "off",
       "unicorn/consistent-function-scoping": "off",
       "unicorn/prefer-query-selector": "off",
+      "unicorn/switch-case-braces": "off",
     },
   },
   {

@@ -6,11 +6,11 @@
   "main": "index.js",
   "type": "module",
   "exports": {
-    ".": "./src/index.mjs",
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "lint": "eslint --cache",
+    "lint": "yarn tsc && eslint --cache",
     "upgradeAll": "npm-check-updates --packageFile ./package.json -u"
   },
   "repository": {
@@ -46,6 +46,6 @@
     "npm-check-updates": "^16.3.8",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
-    "typescript": "^4.8.4"
+    "typescript": "^5.7.3"
   }
 }

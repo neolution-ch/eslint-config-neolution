@@ -1,3 +1,3 @@
-import neolutionEslintConfig from "./src/index.mjs";
+import neolutionEslintConfig from "./dist/index.js";
 
-export default [...neolutionEslintConfig.configs.flat.javascript];
+export default [...neolutionEslintConfig.configs.flat.typescript];

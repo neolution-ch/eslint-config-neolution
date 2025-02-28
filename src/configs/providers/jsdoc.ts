@@ -1,4 +1,5 @@
 import jsdoc from "eslint-plugin-jsdoc";
+import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 
 const jsdocRules = [
   jsdoc.configs["flat/recommended"],
@@ -9,6 +10,6 @@ const jsdocRules = [
       "jsdoc/require-jsdoc": "off",
     },
   },
-];
+] as InfiniteDepthConfigWithExtends;
 
 export default jsdocRules;
