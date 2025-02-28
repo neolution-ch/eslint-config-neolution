@@ -9,6 +9,9 @@
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "lint": "yarn tsc && eslint --cache",
     "upgradeAll": "npm-check-updates --packageFile ./package.json -u"
