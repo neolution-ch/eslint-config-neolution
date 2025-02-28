@@ -8,7 +8,6 @@
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.modern.js",
       "require": "./dist/index.js"
     }
   },
