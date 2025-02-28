@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "moduleResolution": "nodenext"
   },
-  "include": ["src/**/*"],
+  "include": ["src"],
   "compileOnSave": true,
   "buildOnSave": true
 }
