@@ -13,6 +13,7 @@ const unicornRules = config(
       "unicorn/consistent-function-scoping": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/switch-case-braces": "off",
+      "unicorn/no-null": "off",
     },
   },
   {

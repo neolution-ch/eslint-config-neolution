@@ -10,11 +10,6 @@ const reactLibraryConfig: ConfigurationType = {
   prettierRecommended: true,
   jsdoc: true,
   onlyError: true,
-  overrides: {
-    rules: {
-      "unicorn/no-null": "off",
-    },
-  },
 };
 
 export default reactLibraryConfig;
