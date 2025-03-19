@@ -3,17 +3,19 @@ import { FixupConfigArray, fixupConfigRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
 
 import defaults from "./providers/default.js";
-import esLint from "@eslint/js";
+import esLintRules from "./providers/eslint.js";
 import typescriptRules from "./providers/typescript.js";
 import unicornRules from "./providers/unicorn.js";
 import eslintPluginReact from "eslint-plugin-react";
 import importRules from "./providers/importPlugin.js";
 import nextRules from "./providers/next.js";
+import reactHooksRules from "./providers/reactHooks.js";
 import pluginCypress from "eslint-plugin-cypress/flat";
 import jsdocRules from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 
+// eslint-disable-next-line complexity
 const getConfig = (ruleConfig: ConfigurationType) => {
   const compat = new FlatCompat();
   const {
@@ -40,7 +42,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (esLintRecommended) {
-    configs.push(esLint.configs.recommended);
+    configs.push(esLintRules);
   }
 
   if (typescript) {
@@ -72,7 +74,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (reactHooks) {
-    configs.push(...compat.extends("plugin:react-hooks/recommended"));
+    configs.push(reactHooksRules);
   }
 
   if (cypressRecommended) {

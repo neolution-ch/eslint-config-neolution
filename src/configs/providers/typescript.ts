@@ -36,6 +36,10 @@ const typescriptRules = config(
         },
       ],
       "@typescript-eslint/unbound-method": "off",
+
+      // https://github.com/typescript-eslint/typescript-eslint/issues/2621
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error",
     },
   },
 );

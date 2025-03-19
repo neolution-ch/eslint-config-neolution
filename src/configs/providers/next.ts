@@ -1,9 +1,7 @@
 import { FlatCompat } from "@eslint/eslintrc";
-import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
+import { config } from "typescript-eslint";
 
 const compat = new FlatCompat();
-const nextRules = [
-  ...compat.extends("plugin:@next/next/recommended"),
-] as InfiniteDepthConfigWithExtends;
+const nextRules = config(compat.extends("plugin:@next/next/recommended"));
 
 export default nextRules;
