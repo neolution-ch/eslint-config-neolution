@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Migrate to eslint 9 and flat config
+- :boom: Migrate to eslint 9 and flat config
 
 ## [1.3.0] - 2022-12-13
 
