@@ -50,7 +50,6 @@
     "@eslint/js": "^9.18.0",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__eslintrc": "^2.1.2",
-    "eclint": "^2.8.1",
     "eslint": "^9.18.0",
     "npm-check-updates": "^16.3.8",
     "prettier": "^3.4.2",
