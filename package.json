@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "lint": "yarn tsc && eslint --cache",
+    "prepack": "yarn tsc",
     "upgradeAll": "npm-check-updates --packageFile ./package.json -u"
   },
   "repository": {
