@@ -14,7 +14,7 @@ on:
 
       pre_release:
         type: choice
-        description: Pre Rlease?
+        description: Pre Release?
         options:
           - stable
           - alpha
