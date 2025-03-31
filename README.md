@@ -1,6 +1,6 @@
 # eslint-config-neolution
 
-This package provides Neolution's .eslintrc as an extensible shared config.
+This package provides Neolution's eslint.config.js as an extensible shared config.
 
 ## Installation
 
@@ -11,37 +11,29 @@ yarn add -D @neolution-ch/eslint-config-neolution
 
 ## Usage
 
-Edit the `.eslintrc.js` of your project:
+Edit the `eslint.config.mjs` of your project:
 
 ```js
-module.exports = {
-  ...
-  extends: ["@neolution-ch/eslint-config-neolution"],
-  ...
-}
+import neolutionEslintConfig from "@neolution-ch/eslint-config-neolution";
+
+export default [...neolutionEslintConfig.configs.flat.nextjs];
 ```
 
-### React
+### Configs
 
-For React project you might need to adjust the "@typescript-eslint/naming-convention" rule to allow PascalCase for component names.
-
-```js
-module.exports = {
-  ...
-  rules: {
-    "@typescript-eslint/naming-convention": ["error", {
-      selector: "default",
-      format: ["camelCase", "PascalCase"],
-      leadingUnderscore: "allow",
-    },
-    {
-      selector: ["typeLike", "accessor", "enumMember"],
-      format: ["PascalCase"],
-    }],
-  }
-  ...
-}
-```
+| ruleset                                         |  nextjs  | cypress  | react-library  | typescript  | javascript  |
+|------------------------------------------------ |:-------: |:-------: |:-------------: |:----------: |:----------: |
+| eslint.configs.recommended                      | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
+| unicorn/recommended                             | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
+| typeScriptEslint.configs.recommended            | &check;  | &check;  |    &check;     |   &check;   |   &cross;   |
+| eslintPluginReact.configs.flat.recommended      | &check;  | &check;  |    &check;     |   &cross;   |   &check;   |
+| eslintPluginReact.configs.flat["jsx-runtime"]   | &check;  | &check;  |    &check;     |   &cross;   |   &check;   |
+| eslintPluginPrettierRecommended                 | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
+| next/next/recommended                           | &check;  | &cross;  |    &cross;     |   &cross;   |   &check;   |
+| import/typescript                               | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
+| react-hooks                                     | &check;  | &cross;  |    &check;     |   &cross;   |   &check;   |
+| cypress/recommended                             | &cross;  | &check;  |    &cross;     |   &cross;   |   &cross;   |
+| eslint-plugin-no-only-tests                     | &cross;  | &check;  |    &cross;     |   &cross;   |   &cross;   |
 
 ## License
 
