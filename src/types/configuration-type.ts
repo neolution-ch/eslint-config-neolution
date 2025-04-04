@@ -1,4 +1,4 @@
-declare type ConfigurationType = {
+export type ConfigurationType = {
   defaults?: boolean;
   esLintRecommended?: boolean;
   typescript?: boolean;
