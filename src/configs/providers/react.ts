@@ -24,5 +24,4 @@ const reactRulesJsx = config(eslintPluginReact.configs.flat["jsx-runtime"], {
   },
 });
 
-export default reactRulesRecommended;
-export { reactRulesJsx };
+export { reactRulesJsx, reactRulesRecommended };

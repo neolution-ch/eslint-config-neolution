@@ -6,14 +6,15 @@ import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
 import typescriptRules from "./providers/typescript.js";
 import unicornRules from "./providers/unicorn.js";
-import eslintPluginReact from "eslint-plugin-react";
 import importRules from "./providers/importPlugin.js";
 import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
+import { reactRulesJsx, reactRulesRecommended } from "./providers/react.js";
 import pluginCypress from "eslint-plugin-cypress/flat";
 import jsdocRules from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
+import { ConfigurationType } from "../types/configuration-type.js";
 
 // eslint-disable-next-line complexity
 const getConfig = (ruleConfig: ConfigurationType) => {
@@ -54,11 +55,11 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (reactRecommended) {
-    configs.push(eslintPluginReact.configs.flat.recommended);
+    configs.push(reactRulesRecommended);
   }
 
   if (reactJsxRuntime) {
-    configs.push(eslintPluginReact.configs.flat["jsx-runtime"]);
+    configs.push(reactRulesJsx);
   }
 
   if (includeImport) {

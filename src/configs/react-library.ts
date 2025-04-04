@@ -1,3 +1,5 @@
+import { ConfigurationType } from "../types/configuration-type.js";
+
 const reactLibraryConfig: ConfigurationType = {
   defaults: true,
   esLintRecommended: true,
