@@ -13,5 +13,6 @@ export type ConfigurationType = {
   jsdoc?: boolean;
   onlyError?: boolean;
   noOnlyTests?: boolean;
+  jest?: boolean;
   overrides?: import("typescript-eslint").InfiniteDepthConfigWithExtends;
 };

@@ -15,6 +15,7 @@ import jsdocRules from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 import { ConfigurationType } from "../types/configuration-type.js";
+import jestPlugin from "eslint-plugin-jest";
 
 // eslint-disable-next-line complexity
 const getConfig = (ruleConfig: ConfigurationType) => {
@@ -34,6 +35,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     jsdoc,
     onlyError: includeonlyError,
     noOnlyTests: includeonlyNoOnlyTests,
+    jest,
     overrides,
   } = ruleConfig;
   const configs = new Array<InfiniteDepthConfigWithExtends>();
@@ -99,6 +101,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
         "no-only-tests/no-only-tests": "error",
       },
     });
+  }
+
+  if (jest) {
+    configs.push(jestPlugin.configs["flat/recommended"]);
   }
 
   if (overrides) {
