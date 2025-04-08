@@ -17,6 +17,11 @@ import noOnlyTests from "eslint-plugin-no-only-tests";
 import { ConfigurationType } from "../types/configuration-type.js";
 import jestPlugin from "eslint-plugin-jest";
 
+/**
+ * The function `getConfig` takes a configuration object and returns a merged ESLint configuration.
+ * @param ruleConfig The configuration object that specifies which ESLint rules and plugins to include.
+ * @returns A merged ESLint configuration object.
+ */
 // eslint-disable-next-line complexity
 const getConfig = (ruleConfig: ConfigurationType) => {
   const compat = new FlatCompat();
