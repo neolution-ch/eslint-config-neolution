@@ -51,6 +51,10 @@ export type ConfigurationType = {
    */
   jsdoc?: boolean;
   /**
+   * Enables the recommended configuration for Jsdoc with RequireJsdoc. If set to true, it will use the recommended configuration.
+   */
+  jsdocRequireJsdoc?: boolean;
+  /**
    * If set to true, it will only show errors in the linter output. This is useful for CI/CD pipelines where you only want to see errors and not warnings.
    */
   onlyError?: boolean;

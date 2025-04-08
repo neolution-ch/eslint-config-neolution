@@ -11,7 +11,7 @@ import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
 import { reactRulesJsx, reactRulesRecommended } from "./providers/react.js";
 import pluginCypress from "eslint-plugin-cypress/flat";
-import jsdocRules from "./providers/jsdoc.js";
+import { jsdocRules, jsdocRequireRules } from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 import { ConfigurationType } from "../types/configuration-type.js";
@@ -38,6 +38,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     reactHooks,
     cypressRecommended,
     jsdoc,
+    jsdocRequireJsdoc,
     onlyError: includeonlyError,
     noOnlyTests: includeonlyNoOnlyTests,
     jest,
@@ -91,6 +92,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
 
   if (jsdoc) {
     configs.push(jsdocRules);
+  }
+
+  if (jsdocRequireJsdoc) {
+    configs.push(jsdocRequireRules);
   }
 
   if (includeonlyError) {
