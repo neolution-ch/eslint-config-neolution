@@ -13,6 +13,12 @@ const reactRulesRecommended = config(
           unnamedComponents: "arrow-function",
         },
       ],
+      "react/no-unstable-nested-components": [
+        "error",
+        {
+          allowAsProps: false,
+        },
+      ],
     },
   },
 );
@@ -24,5 +30,4 @@ const reactRulesJsx = config(eslintPluginReact.configs.flat["jsx-runtime"], {
   },
 });
 
-export default reactRulesRecommended;
-export { reactRulesJsx };
+export { reactRulesJsx, reactRulesRecommended };

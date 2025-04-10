@@ -6,15 +6,22 @@ import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
 import typescriptRules from "./providers/typescript.js";
 import unicornRules from "./providers/unicorn.js";
-import eslintPluginReact from "eslint-plugin-react";
 import importRules from "./providers/importPlugin.js";
 import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
+import { reactRulesJsx, reactRulesRecommended } from "./providers/react.js";
 import pluginCypress from "eslint-plugin-cypress/flat";
-import jsdocRules from "./providers/jsdoc.js";
+import { jsdocRules, jsdocRequireRules } from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
+import { ConfigurationType } from "../types/configuration-type.js";
+import jestPlugin from "eslint-plugin-jest";
 
+/**
+ * The function `getConfig` takes a configuration object and returns a merged ESLint configuration.
+ * @param ruleConfig The configuration object that specifies which ESLint rules and plugins to include.
+ * @returns A merged ESLint configuration object.
+ */
 // eslint-disable-next-line complexity
 const getConfig = (ruleConfig: ConfigurationType) => {
   const compat = new FlatCompat();
@@ -31,8 +38,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     reactHooks,
     cypressRecommended,
     jsdoc,
+    jsdocRequireJsdoc,
     onlyError: includeonlyError,
     noOnlyTests: includeonlyNoOnlyTests,
+    jest,
     overrides,
   } = ruleConfig;
   const configs = new Array<InfiniteDepthConfigWithExtends>();
@@ -54,11 +63,11 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (reactRecommended) {
-    configs.push(eslintPluginReact.configs.flat.recommended);
+    configs.push(reactRulesRecommended);
   }
 
   if (reactJsxRuntime) {
-    configs.push(eslintPluginReact.configs.flat["jsx-runtime"]);
+    configs.push(reactRulesJsx);
   }
 
   if (includeImport) {
@@ -85,6 +94,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     configs.push(jsdocRules);
   }
 
+  if (jsdocRequireJsdoc) {
+    configs.push(jsdocRequireRules);
+  }
+
   if (includeonlyError) {
     configs.push({ plugins: { "only-error": onlyError } });
   }
@@ -98,6 +111,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
         "no-only-tests/no-only-tests": "error",
       },
     });
+  }
+
+  if (jest) {
+    configs.push(jestPlugin.configs["flat/recommended"]);
   }
 
   if (overrides) {
