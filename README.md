@@ -21,19 +21,19 @@ export default [...neolutionEslintConfig.configs.flat.nextjs];
 
 ### Configs
 
-| ruleset                                         |  nextjs  | cypress  | react-library  | typescript  | javascript  |
-|------------------------------------------------ |:-------: |:-------: |:-------------: |:----------: |:----------: |
-| eslint.configs.recommended                      | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
-| unicorn/recommended                             | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
-| typeScriptEslint.configs.recommended            | &check;  | &check;  |    &check;     |   &check;   |   &cross;   |
-| eslintPluginReact.configs.flat.recommended      | &check;  | &check;  |    &check;     |   &cross;   |   &check;   |
-| eslintPluginReact.configs.flat["jsx-runtime"]   | &check;  | &check;  |    &check;     |   &cross;   |   &check;   |
-| eslintPluginPrettierRecommended                 | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
-| next/next/recommended                           | &check;  | &cross;  |    &cross;     |   &cross;   |   &check;   |
-| import/typescript                               | &check;  | &check;  |    &check;     |   &check;   |   &check;   |
-| react-hooks                                     | &check;  | &cross;  |    &check;     |   &cross;   |   &check;   |
-| cypress/recommended                             | &cross;  | &check;  |    &cross;     |   &cross;   |   &cross;   |
-| eslint-plugin-no-only-tests                     | &cross;  | &check;  |    &cross;     |   &cross;   |   &cross;   |
+| ruleset                                       | nextjs  | cypress | react-library | typescript | javascript |
+| --------------------------------------------- | :-----: | :-----: | :-----------: | :--------: | :--------: |
+| eslint.configs.recommended                    | &check; | &check; |    &check;    |  &check;   |  &check;   |
+| unicorn/recommended                           | &check; | &check; |    &check;    |  &check;   |  &check;   |
+| typeScriptEslint.configs.recommended          | &check; | &check; |    &check;    |  &check;   |  &cross;   |
+| eslintPluginReact.configs.flat.recommended    | &check; | &check; |    &check;    |  &cross;   |  &cross;   |
+| eslintPluginReact.configs.flat["jsx-runtime"] | &check; | &check; |    &check;    |  &cross;   |  &cross;   |
+| eslintPluginPrettierRecommended               | &check; | &check; |    &check;    |  &check;   |  &check;   |
+| next/next/recommended                         | &check; | &cross; |    &cross;    |  &cross;   |  &cross;   |
+| import/typescript                             | &check; | &check; |    &check;    |  &check;   |  &check;   |
+| react-hooks                                   | &check; | &cross; |    &check;    |  &cross;   |  &cross;   |
+| cypress/recommended                           | &cross; | &check; |    &cross;    |  &cross;   |  &cross;   |
+| eslint-plugin-no-only-tests                   | &cross; | &check; |    &cross;    |  &cross;   |  &cross;   |
 
 ## License
 
