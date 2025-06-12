@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
 - Added `release-it.json` for release management
+
+### Changed
+
+- Adjusted Javascript rule set according the Typescript rule set
 
 ## [2.0.0] - 2025-03-04
 
