@@ -23,6 +23,7 @@ const configs = {
   },
 };
 
+export type { ConfigurationType } from "./types/configuration-type.js";
 export default {
   configs,
 };
