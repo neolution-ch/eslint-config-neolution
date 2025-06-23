@@ -1,4 +1,39 @@
 import { config, configs } from "typescript-eslint";
+import fs from "fs";
+import path from "path";
+
+const findTsConfigRootDir = () => {
+  try {
+    const findTsConfigRootDirInternal = (
+      directory: string,
+      filename: string,
+    ) => {
+      let fileStats: fs.Stats | undefined;
+      try {
+        fileStats = fs.statSync(path.join(directory, filename));
+      } catch {
+        // Do nothing
+      }
+
+      // If the file exists and is a file, return the directory
+      if (fileStats?.isFile()) {
+        return directory;
+      }
+
+      // Don't continue when already at the fs root
+      if (directory === path.resolve("/")) {
+        return null;
+      }
+
+      // Recursively check the parent directory
+      return findTsConfigRootDirInternal(path.dirname(directory), filename);
+    };
+
+    return findTsConfigRootDirInternal(process.cwd(), "tsconfig.json");
+  } catch {
+    return null;
+  }
+};
 
 const typescriptRules = config(
   configs.eslintRecommended,
@@ -15,6 +50,11 @@ const typescriptRules = config(
       parserOptions: {
         project: true,
         parser: "@typescript-eslint/parser",
+
+        // typescript-eslint defaults to process.cwd() but this is not always correct,
+        // for example Visual Studio runs eslint from the folder of the file open in
+        // the editor and not the root of the project
+        tsconfigRootDir: findTsConfigRootDir() ?? process.cwd(),
       },
     },
   },
