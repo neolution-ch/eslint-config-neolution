@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- tsconfigRootDir defaults to the tsconfig.json directory searched recusively starting from process.cwd()
+
 ## [2.1.0] - 2025-04-10
 
 ### Added
