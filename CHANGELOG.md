@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- adjusted "unicorn/no-useless-undefined" to allow undefined arrow functions
+- adjusted "@typescript-eslint/no-unused-vars" to allow unused variables starting with "\_" (TypeScript style: https://typescript-eslint.io/rules/no-unused-vars/#faqs)
+
 ## [2.1.0] - 2025-04-10
 
 ### Added
