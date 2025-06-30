@@ -14,6 +14,10 @@ const unicornRules = config(
       "unicorn/prefer-query-selector": "off",
       "unicorn/switch-case-braces": "off",
       "unicorn/no-null": "off",
+      "unicorn/no-useless-undefined": [
+        "error",
+        { checkArrowFunctionBody: false },
+      ],
     },
   },
   {
