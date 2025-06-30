@@ -4,14 +4,10 @@ const javascriptConfig: ConfigurationType = {
   defaults: true,
   esLintRecommended: true,
   unicorn: true,
-  reactRecommended: true,
-  reactJsxRuntime: true,
-  prettierRecommended: true,
-  next: true,
   import: true,
-  reactHooks: true,
-  onlyError: true,
+  prettierRecommended: true,
   jsdoc: true,
+  onlyError: true,
 };
 
 export default javascriptConfig;
