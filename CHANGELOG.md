@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Adjusted Javascript rule set according the Typescript rule set
 - tsconfigRootDir defaults to the tsconfig.json directory searched recusively starting from process.cwd()
 
 ## [2.1.0] - 2025-04-10
