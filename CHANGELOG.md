@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Adjusted Javascript rule set according the Typescript rule set
 - tsconfigRootDir defaults to the tsconfig.json directory searched recusively starting from process.cwd()
+- Adjusted "unicorn/no-useless-undefined" to allow undefined arrow functions
+- Adjusted "@typescript-eslint/no-unused-vars" to allow unused variables starting with "\_" (TypeScript style: https://typescript-eslint.io/rules/no-unused-vars/#faqs)
 
 ## [2.1.0] - 2025-04-10
 
