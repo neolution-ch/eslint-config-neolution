@@ -1953,6 +1953,11 @@ eslint-config-prettier@^10.0.1:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-10.0.1.tgz#fbb03bfc8db0651df9ce4e8b7150d11c5fe3addf"
   integrity sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==
 
+eslint-formatter-visualstudio@^8.40.0:
+  version "8.40.0"
+  resolved "https://registry.yarnpkg.com/eslint-formatter-visualstudio/-/eslint-formatter-visualstudio-8.40.0.tgz#5b9ed941bc3220737d9a325e9597396a6f716a7f"
+  integrity sha512-TsbZJpvu0wclOoy5MEhETzxrVWMPDg5sejowvQfbqw9e0ooozbnX/1STGiGaO/fH1JWLQvqQ4qAmai2u/Kep1g==
+
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz#d4eaac52b8a2e7c3cd1903eb00f7e053356118ac"
