@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Adjusted "react/jsx-no-useless-fragment" to allow expressions
+
 ## [2.2.0] - 2025-07-15
 
 ### Changed

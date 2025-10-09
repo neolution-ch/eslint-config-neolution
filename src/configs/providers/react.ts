@@ -26,7 +26,7 @@ const reactRulesRecommended = config(
 const reactRulesJsx = config(eslintPluginReact.configs.flat["jsx-runtime"], {
   rules: {
     "react/jsx-filename-extension": ["error", { extensions: [".tsx", ".jsx"] }],
-    "react/jsx-no-useless-fragment": ["error"],
+    "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
   },
 });
 
