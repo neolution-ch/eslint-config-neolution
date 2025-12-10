@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated all packages
 
+### Removed
+
+- Adjusted the previous more restricted rules "max-lines" and "complexity" to the default-recommended.
+
 ## [2.2.0] - 2025-07-15
 
 ### Changed

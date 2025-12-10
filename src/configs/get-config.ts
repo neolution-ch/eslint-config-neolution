@@ -22,7 +22,6 @@ import jestPlugin from "eslint-plugin-jest";
  * @param ruleConfig The configuration object that specifies which ESLint rules and plugins to include.
  * @returns A merged ESLint configuration object.
  */
-// eslint-disable-next-line complexity
 const getConfig = (ruleConfig: ConfigurationType) => {
   const compat = new FlatCompat();
   const {
