@@ -1,8 +1,8 @@
-import jsdoc from "eslint-plugin-jsdoc";
+import index from "eslint-plugin-jsdoc";
 import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 
 const jsdocRules = [
-  jsdoc.configs["flat/recommended"],
+  index.configs["flat/recommended"],
   {
     rules: {
       "jsdoc/require-param-type": "off",

@@ -8,8 +8,6 @@ const esLintRules = config(esLint.configs.recommended, {
     // Prefer string interpolation
     "prefer-template": "error",
 
-    "max-lines": ["error", { max: 200 }],
-    complexity: ["error", { max: 12 }],
     "prefer-destructuring": "error",
     "no-empty-function": "error",
     "arrow-body-style": ["error", "as-needed"],
