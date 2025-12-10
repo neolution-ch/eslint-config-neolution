@@ -9,7 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updated all packages
 - Adjusted "react/jsx-no-useless-fragment" to allow expressions
+
+### Removed
+
+- Adjusted the previous more restricted rules "max-lines" and "complexity" to the default-recommended.
 
 ## [2.2.0] - 2025-07-15
 
