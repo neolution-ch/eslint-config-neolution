@@ -1,4 +1,6 @@
 import globals from "globals";
+import path from "path";
+import { findTsConfigRootDir } from "./typescript.js";
 
 const defaults = [
   {
@@ -21,7 +23,11 @@ const defaults = [
       "import/resolver": {
         typescript: {
           alwaysTryTypes: true,
-          project: ["tsconfig.json"],
+
+          // eslint-import-resolver-typescript defaults to process.cwd() but this is not always correct,
+          // for example Visual Studio runs eslint from the folder of the file open in
+          // the editor and not the root of the project
+          project: [path.join(findTsConfigRootDir() ?? "", "tsconfig.json")],
         },
         node: {
           extensions: [".js", ".jsx", ".ts", ".tsx"],

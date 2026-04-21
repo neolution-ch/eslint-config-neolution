@@ -2,7 +2,7 @@ import { config, configs } from "typescript-eslint";
 import fs from "fs";
 import path from "path";
 
-const findTsConfigRootDir = () => {
+export const findTsConfigRootDir = () => {
   try {
     const findTsConfigRootDirInternal = (
       directory: string,
