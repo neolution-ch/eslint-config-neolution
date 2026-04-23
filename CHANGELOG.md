@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Adjusted "import/resolver" project setting with full tsconfig.json path
+
 ## [2.3.0] - 2025-12-23
 
 ### Changed
