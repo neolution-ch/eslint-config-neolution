@@ -17,10 +17,12 @@ const defaults = [
       react: {
         version: "17",
       },
-      "import/parsers": {
+      // eslint-plugin-import-x reads its settings from the `import-x/*` namespace, even
+      // though we register the plugin itself under the `import` name.
+      "import-x/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
-      "import/resolver": {
+      "import-x/resolver": {
         typescript: {
           alwaysTryTypes: true,
 
@@ -33,7 +35,7 @@ const defaults = [
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       },
-      "import/ignore": [
+      "import-x/ignore": [
         String.raw`\.(scss|less|css)$`, // can't parse unprocessed CSS modules
       ],
     },

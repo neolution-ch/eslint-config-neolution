@@ -1,5 +1,4 @@
 import { config, InfiniteDepthConfigWithExtends } from "typescript-eslint";
-import { FixupConfigArray, fixupConfigRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
 
 import defaults from "./providers/default.js";
@@ -13,7 +12,7 @@ import importRules from "./providers/importPlugin.js";
 import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
 import { reactRulesJsx, reactRulesRecommended } from "./providers/react.js";
-import pluginCypress from "eslint-plugin-cypress/flat";
+import pluginCypress from "eslint-plugin-cypress";
 import { jsdocRules, jsdocRequireRules } from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
@@ -128,7 +127,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     configs.push(overrides);
   }
 
-  return fixupConfigRules(config(configs) as FixupConfigArray);
+  return config(configs);
 };
 
 export default getConfig;

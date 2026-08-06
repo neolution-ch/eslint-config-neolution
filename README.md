@@ -9,6 +9,13 @@ This package provides Neolution's eslint.config.js as an extensible shared confi
 yarn add -D @neolution-ch/eslint-config-neolution
 ```
 
+### Requirements
+
+| requirement | supported versions     |
+| ----------- | ---------------------- |
+| eslint      | `^9.38.0 \|\| ^10.0.0` |
+| node        | `^22.13.0 \|\| >=24`   |
+
 ## Usage
 
 Edit the `eslint.config.mjs` of your project:
@@ -30,7 +37,7 @@ export default [...neolutionEslintConfig.configs.flat.nextjs];
 | eslintPluginReact.configs.flat["jsx-runtime"] | &check; | &check; |    &check;    |  &cross;   |  &cross;   |
 | eslintPluginPrettierRecommended               | &check; | &check; |    &check;    |  &check;   |  &check;   |
 | next/next/recommended                         | &check; | &cross; |    &cross;    |  &cross;   |  &cross;   |
-| import/typescript                             | &check; | &check; |    &check;    |  &check;   |  &check;   |
+| import-x/recommended (as `import/*`)          | &check; | &check; |    &check;    |  &check;   |  &check;   |
 | react-hooks                                   | &check; | &cross; |    &check;    |  &cross;   |  &cross;   |
 | cypress/recommended                           | &cross; | &check; |    &cross;    |  &cross;   |  &cross;   |
 | eslint-plugin-no-only-tests                   | &cross; | &check; |    &cross;    |  &cross;   |  &cross;   |

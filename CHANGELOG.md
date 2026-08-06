@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Support for ESLint v10 (the config now supports `eslint@^9.38.0 || ^10.0.0`)
+
+### Changed
+
+- Updated `eslint-plugin-unicorn` (v65), `eslint-plugin-jsdoc` (v63) and `eslint-plugin-cypress` (v6) to their latest majors that still support ESLint v9
+- Replaced `eslint-plugin-import` with its maintained fork `eslint-plugin-import-x`, which supports ESLint v10. The plugin is registered under the `import` name, so all rule ids stay `import/*` and existing `eslint-disable` comments and rule overrides keep working
+- The import plugin settings moved from the `import/*` to the `import-x/*` namespace (`import-x/resolver`, `import-x/parsers`, `import-x/ignore`). Projects that override these settings themselves have to rename them
+- `eslint-plugin-react` is patched with `fixupPluginRules` instead of applying `fixupConfigRules` to the whole config, because the latter breaks the other (already ESLint v10 compatible) plugins
+
+### Removed
+
+- Support for node < 22.13, required by `eslint-plugin-jsdoc`
+
 ## [2.6.0] - 2026-10-06
 
 ### Changed
