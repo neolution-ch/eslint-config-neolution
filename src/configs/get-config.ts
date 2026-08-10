@@ -1,5 +1,6 @@
-import { config, InfiniteDepthConfigWithExtends } from "typescript-eslint";
-import { FlatCompat } from "@eslint/eslintrc";
+import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
+import type { TSESLint } from "@typescript-eslint/utils";
+import prettierRecommendedConfig from "eslint-plugin-prettier/recommended";
 
 import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
@@ -25,7 +26,6 @@ import jestPlugin from "eslint-plugin-jest";
  * @returns A merged ESLint configuration object.
  */
 const getConfig = (ruleConfig: ConfigurationType) => {
-  const compat = new FlatCompat();
   const {
     defaults: includeDefaults,
     esLintRecommended,
@@ -81,7 +81,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (prettierRecommended) {
-    configs.push(...compat.extends("plugin:prettier/recommended"));
+    configs.push(prettierRecommendedConfig);
   }
 
   if (includeNext) {
@@ -127,7 +127,13 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     configs.push(overrides);
   }
 
-  return config(configs);
+  // The providers are plain (possibly nested) arrays, flattening them is all that is
+  // needed here. `extends` is not used anywhere, so no config helper is required.
+  // The array is widened first, because TypeScript cannot evaluate `flat` against the
+  // recursive `InfiniteDepthConfigWithExtends` type.
+  return (configs as unknown[]).flat(
+    Number.POSITIVE_INFINITY,
+  ) as TSESLint.FlatConfig.ConfigArray;
 };
 
 export default getConfig;

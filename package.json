@@ -30,7 +30,6 @@
   "author": "Neolution",
   "dependencies": {
     "@eslint/compat": "^2.1.1",
-    "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^10.0.1",
     "@next/eslint-plugin-next": "^15.5.26",
     "eslint-config-prettier": "^10.1.8",

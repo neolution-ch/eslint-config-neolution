@@ -1,5 +1,5 @@
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
-import { config } from "typescript-eslint";
+import type { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 import type { TSESLint } from "@typescript-eslint/utils";
 
 const rules: TSESLint.FlatConfig.ConfigArray = [
@@ -47,14 +47,14 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
   },
 ];
 
-const unicornRules = config(
+const unicornRules: InfiniteDepthConfigWithExtends = [
   eslintPluginUnicorn.configs["flat/recommended"],
   ...rules,
-);
+];
 
-const unicornRulesUnopinionated = config(
+const unicornRulesUnopinionated: InfiniteDepthConfigWithExtends = [
   eslintPluginUnicorn.configs["unopinionated"],
   ...rules,
-);
+];
 
 export { unicornRules, unicornRulesUnopinionated };

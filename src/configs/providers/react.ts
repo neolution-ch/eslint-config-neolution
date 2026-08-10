@@ -1,4 +1,4 @@
-import { config } from "typescript-eslint";
+import type { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 import { fixupPluginRules } from "@eslint/compat";
 import eslintPluginReact from "eslint-plugin-react";
 
@@ -15,7 +15,7 @@ const asEslintPlugin = (plugin: unknown) =>
 
 const reactPlugin = fixupPluginRules(asEslintPlugin(eslintPluginReact));
 
-const reactRulesRecommended = config(
+const reactRulesRecommended: InfiniteDepthConfigWithExtends = [
   {
     ...eslintPluginReact.configs.flat.recommended,
     plugins: { react: reactPlugin },
@@ -38,9 +38,9 @@ const reactRulesRecommended = config(
       ],
     },
   },
-);
+];
 
-const reactRulesJsx = config(
+const reactRulesJsx: InfiniteDepthConfigWithExtends = [
   {
     ...eslintPluginReact.configs.flat["jsx-runtime"],
     plugins: { react: reactPlugin },
@@ -54,6 +54,6 @@ const reactRulesJsx = config(
       "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
     },
   },
-);
+];
 
 export { reactRulesJsx, reactRulesRecommended };
