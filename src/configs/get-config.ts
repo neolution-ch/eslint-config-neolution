@@ -5,7 +5,10 @@ import { FlatCompat } from "@eslint/eslintrc";
 import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
 import typescriptRules from "./providers/typescript.js";
-import unicornRules from "./providers/unicorn.js";
+import {
+  unicornRules,
+  unicornRulesUnopinionated,
+} from "./providers/unicorn.js";
 import importRules from "./providers/importPlugin.js";
 import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
@@ -29,6 +32,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     esLintRecommended,
     typescript,
     unicorn,
+    unicornUnopinionated,
     reactRecommended,
     reactJsxRuntime,
     import: includeImport,
@@ -59,6 +63,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
 
   if (unicorn) {
     configs.push(unicornRules);
+  }
+
+  if (unicornUnopinionated) {
+    configs.push(unicornRulesUnopinionated);
   }
 
   if (reactRecommended) {

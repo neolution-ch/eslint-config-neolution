@@ -1,8 +1,8 @@
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import { config } from "typescript-eslint";
+import type { TSESLint } from "@typescript-eslint/utils";
 
-const unicornRules = config(
-  eslintPluginUnicorn.configs["flat/recommended"],
+const rules: TSESLint.FlatConfig.ConfigArray = [
   {
     rules: {
       "unicorn/prevent-abbreviations": "off",
@@ -38,6 +38,16 @@ const unicornRules = config(
       "unicorn/prefer-module": "off",
     },
   },
+];
+
+const unicornRules = config(
+  eslintPluginUnicorn.configs["flat/recommended"],
+  ...rules,
 );
 
-export default unicornRules;
+const unicornRulesUnopinionated = config(
+  eslintPluginUnicorn.configs["unopinionated"],
+  ...rules,
+);
+
+export { unicornRules, unicornRulesUnopinionated };

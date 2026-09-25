@@ -19,6 +19,10 @@ export type ConfigurationType = {
    */
   unicorn?: boolean;
   /**
+   * The unopinionated configuration for unicorn. If set to true, it will use the unopinionated configuration.
+   */
+  unicornUnopinionated?: boolean;
+  /**
    * The recommended configuration for React. If set to true, it will use the recommended configuration.
    */
   reactRecommended?: boolean;

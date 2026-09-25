@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated all packages
 
+## [2.5.0] - 2026-06-10
+
+### Added
+
+- Unicorn unopinionated preset
+
+## [2.4.0] - 2026-04-23
+
+### Changed
+
+- Adjusted "import/resolver" project setting with full tsconfig.json path
+
 ## [2.3.0] - 2025-12-23
 
 ### Changed
@@ -79,7 +91,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[unreleased]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.3.0...HEAD
+[unreleased]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.5.0...HEAD
+[2.5.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.4.0...2.5.0
+[2.4.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.3.0...2.4.0
 [2.3.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.2.0...2.3.0
 [2.2.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.0.0...2.1.0
