@@ -18,6 +18,13 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
         "error",
         { checkArrowFunctionBody: false },
       ],
+
+      // new in eslint-plugin-unicorn v62/v63, disabled until the next major release
+      // so that the update does not introduce new errors
+      "unicorn/isolated-functions": "off",
+      "unicorn/no-immediate-mutation": "off",
+      "unicorn/no-useless-collection-argument": "off",
+      "unicorn/prefer-response-static-json": "off",
     },
   },
   {
