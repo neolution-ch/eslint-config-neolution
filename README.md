@@ -6,7 +6,7 @@ This package provides Neolution's eslint.config.js as an extensible shared confi
 
 ```sh
 # inside your project's working tree
-yarn add -D @neolution-ch/eslint-config-neolution
+yarn add -D @neolution-ch/eslint-config-neolution eslint prettier typescript@~6.0.0
 ```
 
 ### Requirements
@@ -14,6 +14,8 @@ yarn add -D @neolution-ch/eslint-config-neolution
 | requirement | supported versions     |
 | ----------- | ---------------------- |
 | eslint      | `^9.38.0 \|\| ^10.0.0` |
+| prettier    | `>=3.0.0`              |
+| typescript  | `>=4.8.4 <6.1.0`       |
 | node        | `^22.13.0 \|\| >=24`   |
 
 ## Usage
