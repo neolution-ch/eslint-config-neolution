@@ -19,11 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced `eslint-plugin-import` with its maintained fork `eslint-plugin-import-x`, which supports ESLint v10. The plugin is registered under the `import` name, so all rule ids stay `import/*` and existing `eslint-disable` comments and rule overrides keep working
 - The import plugin settings moved from the `import/*` to the `import-x/*` namespace (`import-x/resolver-next`, `import-x/parsers`, `import-x/ignore`). Projects that override these settings themselves have to rename them, the resolvers additionally moved from `import/resolver` to `import-x/resolver-next`
 - `eslint-plugin-react` is patched with `fixupPluginRules` instead of applying `fixupConfigRules` to the whole config, because the latter breaks the other (already ESLint v10 compatible) plugins
+- `typescript` is now declared as a peer dependency (`>=4.8.4 <6.1.0`, the range supported by `typescript-eslint`). It was always required, but a missing or unsupported version (e.g. TypeScript v7) was not reported on install
 
 ### Removed
 
 - Support for node < 22.13, required by `eslint-plugin-jsdoc`
-- The deprecated `config()` helper from `typescript-eslint`, the configs are plain arrays now. The resolved config is unchanged, the exported types stay the same
+- The deprecated `config()` helper from `typescript-eslint`, replaced by `defineConfig()` from `eslint/config`. The resolved config is unchanged, the exported types stay the same
 - The `@eslint/eslintrc` dependency, it is no longer needed now that no config is loaded through `FlatCompat`
 
 ### Fixed

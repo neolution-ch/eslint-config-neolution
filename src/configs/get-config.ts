@@ -1,5 +1,6 @@
 import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 import type { TSESLint } from "@typescript-eslint/utils";
+import { defineConfig } from "eslint/config";
 import prettierRecommendedConfig from "eslint-plugin-prettier/recommended";
 
 import defaults from "./providers/default.js";
@@ -127,13 +128,13 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     configs.push(overrides);
   }
 
-  // The providers are plain (possibly nested) arrays, flattening them is all that is
-  // needed here. `extends` is not used anywhere, so no config helper is required.
-  // The array is widened first, because TypeScript cannot evaluate `flat` against the
-  // recursive `InfiniteDepthConfigWithExtends` type.
-  return (configs as unknown[]).flat(
-    Number.POSITIVE_INFINITY,
-  ) as TSESLint.FlatConfig.ConfigArray;
+  // defineConfig flattens the nested provider arrays and resolves `extends`, which
+  // consumers may use in `overrides` (it is part of the public ConfigurationType).
+  // The casts keep the exported type stable, ESLint v9 and v10 declare the config
+  // types slightly differently, so a direct assertion only compiles on one of them.
+  return defineConfig(
+    ...(configs as unknown as Parameters<typeof defineConfig>),
+  ) as unknown as TSESLint.FlatConfig.ConfigArray;
 };
 
 export default getConfig;
