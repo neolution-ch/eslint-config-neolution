@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Updated all packages within their ESLint v9 compatible majors, notably `eslint-plugin-unicorn` (v63), `eslint-plugin-jsdoc` (v62) and `@eslint/compat` (v2)
+- The config now requires `eslint@^9.38.0` (required by `eslint-plugin-unicorn`) and node `^20.19.0 || ^22.13.0 || >=24` (required by `@eslint/compat` and `eslint-plugin-jsdoc`)
+- `@eslint/js` and `globals` are now regular dependencies instead of dev/transitive dependencies, both are imported at runtime
+- `prettier` is now declared as a peer dependency, it is required by `eslint-plugin-prettier`
+- The rules newly added to the unicorn recommended config (`unicorn/isolated-functions`, `unicorn/no-immediate-mutation`, `unicorn/no-useless-collection-argument`, `unicorn/prefer-response-static-json`) are disabled for now, they will be enabled with the next major release
+
+### Removed
+
+- The unused dev dependencies `tsx` and `@types/eslint-config-prettier`
+
+### Fixed
+
+- Pinned `eslint-plugin-cypress` to `~5.3.0`, because `5.4.0` accidentally includes the breaking changes of v6 and removes the `eslint-plugin-cypress/flat` export this config imports
+
 ## [2.5.0] - 2026-06-10
 
 ### Added
