@@ -1,6 +1,7 @@
-import { config, InfiniteDepthConfigWithExtends } from "typescript-eslint";
-import { FixupConfigArray, fixupConfigRules } from "@eslint/compat";
-import { FlatCompat } from "@eslint/eslintrc";
+import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
+import type { TSESLint } from "@typescript-eslint/utils";
+import { defineConfig } from "eslint/config";
+import prettierRecommendedConfig from "eslint-plugin-prettier/recommended";
 
 import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
@@ -13,7 +14,7 @@ import importRules from "./providers/importPlugin.js";
 import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
 import { reactRulesJsx, reactRulesRecommended } from "./providers/react.js";
-import pluginCypress from "eslint-plugin-cypress/flat";
+import pluginCypress from "eslint-plugin-cypress";
 import { jsdocRules, jsdocRequireRules } from "./providers/jsdoc.js";
 import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
@@ -26,7 +27,6 @@ import jestPlugin from "eslint-plugin-jest";
  * @returns A merged ESLint configuration object.
  */
 const getConfig = (ruleConfig: ConfigurationType) => {
-  const compat = new FlatCompat();
   const {
     defaults: includeDefaults,
     esLintRecommended,
@@ -82,7 +82,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (prettierRecommended) {
-    configs.push(...compat.extends("plugin:prettier/recommended"));
+    configs.push(prettierRecommendedConfig);
   }
 
   if (includeNext) {
@@ -128,7 +128,13 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     configs.push(overrides);
   }
 
-  return fixupConfigRules(config(configs) as FixupConfigArray);
+  // defineConfig flattens the nested provider arrays and resolves `extends`, which
+  // consumers may use in `overrides` (it is part of the public ConfigurationType).
+  // The casts keep the exported type stable, ESLint v9 and v10 declare the config
+  // types slightly differently, so a direct assertion only compiles on one of them.
+  return defineConfig(
+    ...(configs as unknown as Parameters<typeof defineConfig>),
+  ) as unknown as TSESLint.FlatConfig.ConfigArray;
 };
 
 export default getConfig;

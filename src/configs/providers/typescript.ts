@@ -1,4 +1,5 @@
-import { config, configs } from "typescript-eslint";
+import { configs } from "typescript-eslint";
+import type { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 import fs from "fs";
 import path from "path";
 
@@ -35,7 +36,7 @@ export const findTsConfigRootDir = () => {
   }
 };
 
-const typescriptRules = config(
+const typescriptRules: InfiniteDepthConfigWithExtends = [
   configs.eslintRecommended,
   configs.recommended,
   configs.recommendedTypeChecked.map((rule) => ({
@@ -93,6 +94,6 @@ const typescriptRules = config(
       ],
     },
   },
-);
+];
 
 export default typescriptRules;
