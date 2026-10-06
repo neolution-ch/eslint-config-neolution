@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.0] - 2026-10-06
+
 ### Changed
 
 - Updated all packages within their ESLint v9 compatible majors, notably `eslint-plugin-unicorn` (v63), `eslint-plugin-jsdoc` (v62) and `@eslint/compat` (v2)
@@ -103,7 +105,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[unreleased]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.5.0...HEAD
+[Unreleased]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.6.0...HEAD
+[2.6.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.5.0...2.6.0
 [2.5.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.4.0...2.5.0
 [2.4.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.3.0...2.4.0
 [2.3.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.2.0...2.3.0
