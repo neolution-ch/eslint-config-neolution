@@ -17,7 +17,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # eslint-plugin-jsdoc requires node ^22.13.0 || >=24
+          node-version: 22
 
       - run: yarn --frozen-lockfile --ignore-engines
 

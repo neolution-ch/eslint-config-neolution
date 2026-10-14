@@ -1,5 +1,5 @@
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
-import { config } from "typescript-eslint";
+import type { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 import type { TSESLint } from "@typescript-eslint/utils";
 
 const rules: TSESLint.FlatConfig.ConfigArray = [
@@ -18,13 +18,6 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
         "error",
         { checkArrowFunctionBody: false },
       ],
-
-      // new in eslint-plugin-unicorn v62/v63, disabled until the next major release
-      // so that the update does not introduce new errors
-      "unicorn/isolated-functions": "off",
-      "unicorn/no-immediate-mutation": "off",
-      "unicorn/no-useless-collection-argument": "off",
-      "unicorn/prefer-response-static-json": "off",
     },
   },
   {
@@ -47,14 +40,14 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
   },
 ];
 
-const unicornRules = config(
-  eslintPluginUnicorn.configs["flat/recommended"],
+const unicornRules: InfiniteDepthConfigWithExtends = [
+  eslintPluginUnicorn.configs.recommended,
   ...rules,
-);
+];
 
-const unicornRulesUnopinionated = config(
+const unicornRulesUnopinionated: InfiniteDepthConfigWithExtends = [
   eslintPluginUnicorn.configs["unopinionated"],
   ...rules,
-);
+];
 
 export { unicornRules, unicornRulesUnopinionated };

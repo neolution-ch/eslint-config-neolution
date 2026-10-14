@@ -1,4 +1,4 @@
-declare module "eslint-plugin-cypress/flat" {
+declare module "eslint-plugin-cypress" {
   type ConfigsType = {
     configs: {
       recommended: import("typescript-eslint").InfiniteDepthConfigWithExtends;

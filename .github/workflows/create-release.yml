@@ -49,6 +49,12 @@ jobs:
           git config user.name "GitHub Release Bot"
           git config user.email release-bot@neolution.ch
 
+      - uses: actions/setup-node@v4
+        with:
+          # eslint-plugin-jsdoc requires node ^22.13.0 || >=24
+          node-version: 22
+          cache: "yarn"
+
       - name: install yarn packages
         run: |
           yarn --frozen-lockfile
