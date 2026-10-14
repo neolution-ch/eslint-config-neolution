@@ -5,13 +5,26 @@ import reactLibrary from "./configs/react-library.js";
 import typescript from "./configs/typescript.js";
 import getConfig from "./configs/get-config.js";
 
+// The presets are built on first access instead of on import, so a project that only
+// uses `getConfig` (for example without the optional prettier packages) does not
+// load the presets it does not use.
 const configs = {
   flat: {
-    nextjs: getConfig(nextjs),
-    javascript: getConfig(javascript),
-    cypress: getConfig(cypress),
-    "react-library": getConfig(reactLibrary),
-    typescript: getConfig(typescript),
+    get nextjs() {
+      return getConfig(nextjs);
+    },
+    get javascript() {
+      return getConfig(javascript);
+    },
+    get cypress() {
+      return getConfig(cypress);
+    },
+    get "react-library"() {
+      return getConfig(reactLibrary);
+    },
+    get typescript() {
+      return getConfig(typescript);
+    },
     getConfig,
     defaults: {
       nextjs,

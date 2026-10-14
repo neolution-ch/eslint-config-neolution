@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The import plugin settings moved from the `import/*` to the `import-x/*` namespace (`import-x/resolver-next`, `import-x/parsers`, `import-x/ignore`). Projects that override these settings themselves have to rename them, the resolvers additionally moved from `import/resolver` to `import-x/resolver-next`
 - `eslint-plugin-react` is patched with `fixupPluginRules` instead of applying `fixupConfigRules` to the whole config, because the latter breaks the other (already ESLint v10 compatible) plugins
 - `typescript` is now declared as a peer dependency (`>=4.8.4 <6.1.0`, the range supported by `typescript-eslint`). It was always required, but a missing or unsupported version (e.g. TypeScript v7) was not reported on install
+- `prettier` and `eslint-plugin-prettier` are now optional peer dependencies (before, `prettier` was a required peer dependency and `eslint-plugin-prettier` a regular dependency). All built-in configs still enable the prettier rules, so projects using them have to install both packages. Projects that build their config with `getConfig({ ...defaults.<config>, prettierRecommended: false })` no longer need them. A clear error is thrown when the prettier rules are enabled but the packages are missing
+- The built-in configs (`configs.flat.nextjs` etc.) are now created when they are first accessed instead of when the package is imported
 
 ### Removed
 

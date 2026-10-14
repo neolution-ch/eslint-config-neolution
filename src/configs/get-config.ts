@@ -1,7 +1,6 @@
 import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 import type { TSESLint } from "@typescript-eslint/utils";
 import { defineConfig } from "eslint/config";
-import prettierRecommendedConfig from "eslint-plugin-prettier/recommended";
 
 import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
@@ -11,6 +10,7 @@ import {
   unicornRulesUnopinionated,
 } from "./providers/unicorn.js";
 import importRules from "./providers/importPlugin.js";
+import loadPrettierRules from "./providers/prettier.js";
 import nextRules from "./providers/next.js";
 import reactHooksRules from "./providers/reactHooks.js";
 import { reactRulesJsx, reactRulesRecommended } from "./providers/react.js";
@@ -82,7 +82,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (prettierRecommended) {
-    configs.push(prettierRecommendedConfig);
+    configs.push(loadPrettierRules());
   }
 
   if (includeNext) {
