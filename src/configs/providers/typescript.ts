@@ -44,13 +44,13 @@ const typescriptRules: InfiniteDepthConfigWithExtends = [
     files: ["**/*.ts", "**/*.tsx", "**/*.mts"], // We use TS config only for TS files
   })),
   {
+    name: "neolution/typescript/parser-options",
     files: ["**/*.ts", "**/*.tsx", "**/*.mts"],
 
     // This is required, see the docs
     languageOptions: {
       parserOptions: {
         project: true,
-        parser: "@typescript-eslint/parser",
 
         // typescript-eslint defaults to process.cwd() but this is not always correct,
         // for example Visual Studio runs eslint from the folder of the file open in
@@ -60,12 +60,14 @@ const typescriptRules: InfiniteDepthConfigWithExtends = [
     },
   },
   {
+    name: "neolution/typescript/javascript-files",
     files: ["**/*.js", "**/*.jsx"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
     },
   },
   {
+    name: "neolution/typescript",
     files: ["**/*.ts", "**/*.tsx", "**/*.mts"], // We use TS config only for TS files
     rules: {
       "@typescript-eslint/no-misused-promises": [

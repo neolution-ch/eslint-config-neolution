@@ -106,11 +106,15 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (includeonlyError) {
-    configs.push({ plugins: { "only-error": onlyError } });
+    configs.push({
+      name: "neolution/only-error",
+      plugins: { "only-error": onlyError },
+    });
   }
 
   if (includeonlyNoOnlyTests) {
     configs.push({
+      name: "neolution/no-only-tests",
       plugins: {
         "no-only-tests": noOnlyTests,
       },
@@ -121,7 +125,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
   }
 
   if (jest) {
-    configs.push(jestPlugin.configs["flat/recommended"]);
+    configs.push({
+      name: "jest/recommended",
+      ...jestPlugin.configs["flat/recommended"],
+    });
   }
 
   if (overrides) {

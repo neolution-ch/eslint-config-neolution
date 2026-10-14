@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Every config object now has a `name` (e.g. `neolution/typescript`, `react/recommended`), which `npx @eslint/config-inspector` and ESLint's error messages show
+
+### Removed
+
+- The `parser` entry from the TypeScript `parserOptions`, it is not read by `@typescript-eslint/parser`. The resolved rules are unchanged
+
 ## [3.0.0] - 2026-10-14
 
 ### Added

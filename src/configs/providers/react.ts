@@ -18,9 +18,11 @@ const reactPlugin = fixupPluginRules(asEslintPlugin(eslintPluginReact));
 const reactRulesRecommended: InfiniteDepthConfigWithExtends = [
   {
     ...eslintPluginReact.configs.flat.recommended,
+    name: "react/recommended",
     plugins: { react: reactPlugin },
   },
   {
+    name: "neolution/react",
     rules: {
       // Prefer arrow functions for components
       "react/function-component-definition": [
@@ -43,9 +45,11 @@ const reactRulesRecommended: InfiniteDepthConfigWithExtends = [
 const reactRulesJsx: InfiniteDepthConfigWithExtends = [
   {
     ...eslintPluginReact.configs.flat["jsx-runtime"],
+    name: "react/jsx-runtime",
     plugins: { react: reactPlugin },
   },
   {
+    name: "neolution/react/jsx",
     rules: {
       "react/jsx-filename-extension": [
         "error",
