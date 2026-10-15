@@ -51,7 +51,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          # eslint-plugin-jsdoc requires node ^22.13.0 || >=24
+          # eslint-plugin-jsdoc and release-it require node ^22.22.2 || >=24.15.0
           node-version: 22
           cache: "yarn"
 

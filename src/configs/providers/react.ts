@@ -1,61 +1,27 @@
 import type { InfiniteDepthConfigWithExtends } from "typescript-eslint";
-import { fixupPluginRules } from "@eslint/compat";
-import eslintPluginReact from "eslint-plugin-react";
+import eslintReact from "@eslint-react/eslint-plugin";
 
-// eslint-plugin-react still relies on `context.getFilename()` and friends, which
-// were removed in ESLint v10. Patching just this plugin keeps it working on both
-// ESLint v9 and v10 without touching the other (already modern) plugins.
+// @eslint-react replaces eslint-plugin-react, which is no longer maintained and does not
+// support ESLint v10. Its rules are named `@eslint-react/*` instead of `react/*`.
 //
-// ESLint v9 and v10 declare `RuleContext` differently, so the plugin only structurally
-// matches the `Plugin` type on one of the two majors. Widening to `unknown` first keeps
-// the source compiling against either one, a direct assertion would be reported as
-// unnecessary on v10 and be missing on v9. The patched rules behave the same on both.
-const asEslintPlugin = (plugin: unknown) =>
-  plugin as Parameters<typeof fixupPluginRules>[0];
-
-const reactPlugin = fixupPluginRules(asEslintPlugin(eslintPluginReact));
-
+// eslint-plugin-react's `function-component-definition` and `jsx-filename-extension`
+// have no equivalent in @eslint-react and are dropped. JSX in `.ts` files is already
+// rejected by TypeScript itself.
 const reactRulesRecommended: InfiniteDepthConfigWithExtends = [
-  {
-    ...eslintPluginReact.configs.flat.recommended,
-    name: "react/recommended",
-    plugins: { react: reactPlugin },
-  },
-  {
-    name: "neolution/react",
-    rules: {
-      // Prefer arrow functions for components
-      "react/function-component-definition": [
-        "error",
-        {
-          namedComponents: "arrow-function",
-          unnamedComponents: "arrow-function",
-        },
-      ],
-      "react/no-unstable-nested-components": [
-        "error",
-        {
-          allowAsProps: false,
-        },
-      ],
-    },
-  },
+  eslintReact.configs["recommended-typescript"],
 ];
 
+// The JSX runtime needs no config of its own anymore: @eslint-react has no rule that
+// requires `React` to be in scope for JSX.
 const reactRulesJsx: InfiniteDepthConfigWithExtends = [
   {
-    ...eslintPluginReact.configs.flat["jsx-runtime"],
-    name: "react/jsx-runtime",
-    plugins: { react: reactPlugin },
-  },
-  {
     name: "neolution/react/jsx",
+    plugins: eslintReact.configs["recommended-typescript"].plugins,
     rules: {
-      "react/jsx-filename-extension": [
+      "@eslint-react/jsx-no-useless-fragment": [
         "error",
-        { extensions: [".tsx", ".jsx"] },
+        { allowExpressions: true },
       ],
-      "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
     },
   },
 ];

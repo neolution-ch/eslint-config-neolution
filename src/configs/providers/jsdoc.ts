@@ -1,8 +1,8 @@
-import index from "eslint-plugin-jsdoc";
+import { configs } from "eslint-plugin-jsdoc";
 import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 
 const jsdocRules = [
-  index.configs["flat/recommended"],
+  configs["flat/recommended"],
   {
     name: "neolution/jsdoc",
     rules: {
