@@ -9,8 +9,12 @@ import reactHooksPlugin from "eslint-plugin-react-hooks";
 // `configs.flat.recommended` carries the same rules as the eslintrc `recommended` config
 // that was extended before, `recommended-latest` would additionally enable new rules.
 const reactHooksRules: InfiniteDepthConfigWithExtends = [
-  reactHooksPlugin.configs.flat.recommended,
   {
+    name: "react-hooks/recommended",
+    ...reactHooksPlugin.configs.flat.recommended,
+  },
+  {
+    name: "neolution/react-hooks",
     rules: {
       "react-hooks/rules-of-hooks": "error",
     },

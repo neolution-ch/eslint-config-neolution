@@ -17,6 +17,7 @@ const typescriptParserPath = createRequire(
 
 const defaults = [
   {
+    name: "neolution/defaults/ignores",
     ignores: [
       "**/orval/",
       "**/.next/",
@@ -26,6 +27,7 @@ const defaults = [
     ],
   },
   {
+    name: "neolution/defaults",
     settings: {
       react: {
         version: "17",

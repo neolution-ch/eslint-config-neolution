@@ -4,6 +4,7 @@ import type { TSESLint } from "@typescript-eslint/utils";
 
 const rules: TSESLint.FlatConfig.ConfigArray = [
   {
+    name: "neolution/unicorn",
     rules: {
       "unicorn/prevent-abbreviations": "off",
       "unicorn/filename-case": "off",
@@ -21,18 +22,21 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
     },
   },
   {
+    name: "neolution/unicorn/pages",
     files: ["**/pages/**/*.page.tsx"],
     rules: {
       "unicorn/filename-case": ["error", { case: "kebabCase" }],
     },
   },
   {
+    name: "neolution/unicorn/components",
     files: ["**/components/**/*.tsx"],
     rules: {
       "unicorn/filename-case": ["error", { case: "pascalCase" }],
     },
   },
   {
+    name: "neolution/unicorn/javascript-files",
     files: ["**/*.js", "**/*.jsx"],
     rules: {
       "unicorn/prefer-module": "off",
