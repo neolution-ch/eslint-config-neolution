@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-10-15
+
 ### Added
 
 - Every config object now has a `name` (e.g. `neolution/typescript`, `react/recommended`), which `npx @eslint/config-inspector` and ESLint's error messages show
@@ -141,7 +143,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[Unreleased]: https://github.com/neolution-ch/eslint-config-neolution/compare/3.0.0...HEAD
+[Unreleased]: https://github.com/neolution-ch/eslint-config-neolution/compare/3.1.0...HEAD
+[3.1.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/3.0.0...3.1.0
 [3.0.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.6.0...3.0.0
 [2.6.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.5.0...2.6.0
 [2.5.0]: https://github.com/neolution-ch/eslint-config-neolution/compare/2.4.0...2.5.0
