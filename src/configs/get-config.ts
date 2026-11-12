@@ -20,6 +20,7 @@ import onlyError from "eslint-plugin-only-error";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 import { ConfigurationType } from "../types/configuration-type.js";
 import jestPlugin from "eslint-plugin-jest";
+import promiseRules from "./providers/promise.js";
 
 /**
  * The function `getConfig` takes a configuration object and returns a merged ESLint configuration.
@@ -45,6 +46,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     onlyError: includeonlyError,
     noOnlyTests: includeonlyNoOnlyTests,
     jest,
+    promise,
     overrides,
   } = ruleConfig;
   const configs = new Array<InfiniteDepthConfigWithExtends>();
@@ -122,6 +124,10 @@ const getConfig = (ruleConfig: ConfigurationType) => {
         "no-only-tests/no-only-tests": "error",
       },
     });
+  }
+
+  if (promise) {
+    configs.push(promiseRules);
   }
 
   if (jest) {

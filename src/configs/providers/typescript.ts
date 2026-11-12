@@ -80,6 +80,10 @@ const typescriptRules: InfiniteDepthConfigWithExtends = [
       ],
       "@typescript-eslint/unbound-method": "off",
 
+      // Deprecated APIs are announced in their type declarations long before a major version
+      // removes them. Reporting them keeps the removal from arriving as a surprise.
+      "@typescript-eslint/no-deprecated": "error",
+
       // https://github.com/typescript-eslint/typescript-eslint/issues/2621
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [

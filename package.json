@@ -40,6 +40,7 @@
     "eslint-plugin-jsdoc": "^63.3.3",
     "eslint-plugin-no-only-tests": "^3.4.0",
     "eslint-plugin-only-error": "^1.0.2",
+    "eslint-plugin-promise": "^7.3.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-unicorn": "^65.0.1",

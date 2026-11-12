@@ -46,6 +46,8 @@ export default [...neolutionEslintConfig.configs.flat.nextjs];
 | react-hooks                                   | &check; | &cross; |    &check;    |  &cross;   |  &cross;   |
 | cypress/recommended                           | &cross; | &check; |    &cross;    |  &cross;   |  &cross;   |
 | eslint-plugin-no-only-tests                   | &cross; | &check; |    &cross;    |  &cross;   |  &cross;   |
+| @typescript-eslint/no-deprecated              | &check; | &check; |    &check;    |  &check;   |  &cross;   |
+| promise/prefer-await-to-then                  | &check; | &cross; |    &check;    |  &check;   |  &check;   |
 
 ### Without prettier
 
