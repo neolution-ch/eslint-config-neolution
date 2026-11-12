@@ -8,6 +8,7 @@ const javascriptConfig: ConfigurationType = {
   prettierRecommended: true,
   jsdoc: true,
   onlyError: true,
+  promise: true,
 };
 
 export default javascriptConfig;
