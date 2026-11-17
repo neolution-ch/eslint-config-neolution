@@ -4,7 +4,10 @@ import { defineConfig } from "eslint/config";
 
 import defaults from "./providers/default.js";
 import esLintRules from "./providers/eslint.js";
-import typescriptRules from "./providers/typescript.js";
+import {
+  typescriptRules,
+  typescriptRulesStrict,
+} from "./providers/typescript.js";
 import {
   unicornRules,
   unicornRulesUnopinionated,
@@ -31,6 +34,7 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     defaults: includeDefaults,
     esLintRecommended,
     typescript,
+    typescriptStrict,
     unicorn,
     unicornUnopinionated,
     reactRecommended,
@@ -57,7 +61,9 @@ const getConfig = (ruleConfig: ConfigurationType) => {
     configs.push(esLintRules);
   }
 
-  if (typescript) {
+  if (typescriptStrict) {
+    configs.push(typescriptRulesStrict);
+  } else if (typescript) {
     configs.push(typescriptRules);
   }
 

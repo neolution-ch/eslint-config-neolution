@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `typescriptStrict` option for `getConfig`, which uses the `strict` and `strictTypeChecked` configs of typescript-eslint instead of `recommended` and `recommendedTypeChecked`
+
 ## [3.1.0] - 2026-10-15
 
 ### Added

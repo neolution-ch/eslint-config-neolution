@@ -36,13 +36,24 @@ export const findTsConfigRootDir = () => {
   }
 };
 
-const typescriptRules: InfiniteDepthConfigWithExtends = [
+/**
+ * Builds the TypeScript config.
+ * @param strict Use the `strict` / `strictTypeChecked` presets of typescript-eslint instead of
+ * `recommended` / `recommendedTypeChecked`. Both strict presets are supersets of their recommended
+ * counterparts. Type information is always available, so only the type-checked variant is offered.
+ * @returns The TypeScript config.
+ */
+const getTypescriptRules = (
+  strict: boolean,
+): InfiniteDepthConfigWithExtends => [
   configs.eslintRecommended,
-  configs.recommended,
-  configs.recommendedTypeChecked.map((rule) => ({
-    ...rule,
-    files: ["**/*.ts", "**/*.tsx", "**/*.mts"], // We use TS config only for TS files
-  })),
+  strict ? configs.strict : configs.recommended,
+  (strict ? configs.strictTypeChecked : configs.recommendedTypeChecked).map(
+    (rule) => ({
+      ...rule,
+      files: ["**/*.ts", "**/*.tsx", "**/*.mts"], // We use TS config only for TS files
+    }),
+  ),
   {
     name: "neolution/typescript/parser-options",
     files: ["**/*.ts", "**/*.tsx", "**/*.mts"],
@@ -98,4 +109,5 @@ const typescriptRules: InfiniteDepthConfigWithExtends = [
   },
 ];
 
-export default typescriptRules;
+export const typescriptRules = getTypescriptRules(false);
+export const typescriptRulesStrict = getTypescriptRules(true);
