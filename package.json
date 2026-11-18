@@ -2,7 +2,7 @@
   "name": "@neolution-ch/eslint-config-neolution",
   "version": "3.1.0",
   "description": "This package provides Neolution's .eslintrc as an extensible shared config.",
-  "homepage": "https://github.com/neolution-ch/eslint-config-neolution",
+  "homepage": "https://github.com/collana-solutions/eslint-config-neolution",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neolution-ch/eslint-config-neolution"
+    "url": "git+https://github.com/collana-solutions/eslint-config-neolution"
   },
   "license": "MIT",
   "author": "Neolution",
