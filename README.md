@@ -59,6 +59,20 @@ const { getConfig, defaults } = neolutionEslintConfig.configs.flat;
 export default getConfig({ ...defaults.nextjs, prettierRecommended: false });
 ```
 
+### Strict TypeScript rules
+
+To use the [`strict` and `strictTypeChecked`](https://typescript-eslint.io/users/configs#strict) configs of typescript-eslint instead of `recommended` and `recommendedTypeChecked`, enable `typescriptStrict`:
+
+```js
+import neolutionEslintConfig from "@neolution-ch/eslint-config-neolution";
+
+const { getConfig, defaults } = neolutionEslintConfig.configs.flat;
+
+export default getConfig({ ...defaults.nextjs, typescriptStrict: true });
+```
+
+typescript-eslint does not consider changes to the strict configs breaking, so updates of this package may report new errors when `typescriptStrict` is enabled.
+
 ## License
 
 [MIT](LICENSE.md)

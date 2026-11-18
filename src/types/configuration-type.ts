@@ -15,6 +15,12 @@ export type ConfigurationType = {
    */
   typescript?: boolean;
   /**
+   * The strict configuration for TypeScript (`strict` and `strictTypeChecked` of typescript-eslint).
+   * It replaces the recommended configuration, so `typescript` does not need to be set as well.
+   * Note: typescript-eslint may add rules to the strict configs in minor versions.
+   */
+  typescriptStrict?: boolean;
+  /**
    * The recommended configuration for unicorn. If set to true, it will use the recommended configuration.
    */
   unicorn?: boolean;
