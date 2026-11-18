@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- :boom: `@typescript-eslint/no-deprecated` as an error for TypeScript files, in every config that includes the TypeScript rules. Calls to deprecated APIs, for example TanStack Query's `fetchQuery` or Zod 4's `z.string().email()`, now fail the lint.
+- :boom: `promise/prefer-await-to-then` from `eslint-plugin-promise` in the nextjs, react-library, typescript and javascript configs, behind the new `promise` option. The cypress config leaves it out, because Cypress chains use `.then()` that are not promises.
+
 ## [3.1.0] - 2026-10-15
 
 ### Added

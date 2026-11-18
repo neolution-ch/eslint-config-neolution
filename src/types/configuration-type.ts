@@ -71,6 +71,10 @@ export type ConfigurationType = {
    */
   jest?: boolean;
   /**
+   * The promise rules. If set to true, it will prefer async/await over .then() chains.
+   */
+  promise?: boolean;
+  /**
    * The overrides for the configuration. This is useful for customizing the configuration for specific files or directories or rules.
    */
   overrides?: import("typescript-eslint").InfiniteDepthConfigWithExtends;
