@@ -29,9 +29,6 @@ const defaults = [
   {
     name: "neolution/defaults",
     settings: {
-      react: {
-        version: "17",
-      },
       // eslint-plugin-import-x reads its settings from the `import-x/*` namespace, even
       // though we register the plugin itself under the `import` name.
       "import-x/parsers": {

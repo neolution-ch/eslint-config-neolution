@@ -18,18 +18,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # the config supports both ESLint majors, so both are verified
-        eslint-version: [9, 10]
+        # all supported release lines, the package requires node ^22.22.2 || >=24.15.0
+        node-version: [22, 24, 26]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
         with:
-          # eslint-plugin-jsdoc requires node ^22.13.0 || >=24
-          node-version: 22
+          node-version: ${{ matrix.node-version }}
           cache: "yarn"
       - run: yarn install --frozen-lockfile
-      - name: install eslint v${{ matrix.eslint-version }}
-        run: yarn add --dev eslint@${{ matrix.eslint-version }}
       - run: yarn lint
       - run: yarn pack
 

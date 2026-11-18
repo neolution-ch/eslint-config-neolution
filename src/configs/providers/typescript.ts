@@ -8,7 +8,7 @@ export const findTsConfigRootDir = () => {
     const findTsConfigRootDirInternal = (
       directory: string,
       filename: string,
-    ) => {
+    ): string | null => {
       let fileStats: fs.Stats | undefined;
       try {
         fileStats = fs.statSync(path.join(directory, filename));
@@ -21,13 +21,11 @@ export const findTsConfigRootDir = () => {
         return directory;
       }
 
-      // Don't continue when already at the fs root
-      if (directory === path.resolve("/")) {
-        return null;
-      }
-
-      // Recursively check the parent directory
-      return findTsConfigRootDirInternal(path.dirname(directory), filename);
+      // Don't continue when already at the fs root, otherwise recursively check the
+      // parent directory
+      return directory === path.resolve("/")
+        ? null
+        : findTsConfigRootDirInternal(path.dirname(directory), filename);
     };
 
     return findTsConfigRootDirInternal(process.cwd(), "tsconfig.json");

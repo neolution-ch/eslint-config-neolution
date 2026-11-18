@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced `eslint-plugin-react` with `@eslint-react/eslint-plugin` (`recommended-typescript` config), because `eslint-plugin-react` is no longer maintained and does not support ESLint v10. Rule ids change from `react/*` to `@eslint-react/*`, `eslint-disable` comments and overrides for `react/*` rules have to be updated
+- `@eslint-react` rules that duplicate an enabled `eslint-plugin-react-hooks` rule (e.g. `@eslint-react/rules-of-hooks`) are disabled when `reactHooks` is enabled
+- Updated `eslint-plugin-unicorn` from v65 to v78. Its recommended config enables many new rules (177 in total), `unicorn/prevent-abbreviations` was renamed to `unicorn/name-replacements`
+- `unicorn/filename-case` checks directory names since v78, the `components` (PascalCase) and `pages` (kebab-case) overrides only check file names as before
+- Updated `eslint-plugin-jsdoc` (v65), `eslint-plugin-cypress` (v7), `@next/eslint-plugin-next` (v16), `@eslint/js` (v10), `globals` (v17) and all other packages
+- The config now requires `eslint@^10.4.0` (required by `eslint-plugin-unicorn` and `eslint-plugin-cypress`) and node `^22.22.2 || >=24.15.0` (required by `eslint-plugin-jsdoc`)
+
+- CI builds the package on node 22, 24 and 26 instead of only 22
+
+### Removed
+
+- Support for ESLint v9
+- `react/function-component-definition` and `react/jsx-filename-extension`, `@eslint-react` has no equivalent
+- The `react.version` setting, `@eslint-react` detects the installed React version
+- The `@eslint/compat` dependency, it was only needed to patch `eslint-plugin-react` for ESLint v10
+- The explicit `no-unassigned-vars`, `no-useless-assignment` and `preserve-caught-error` rules, they are part of the `@eslint/js` v10 recommended config
+
+### Fixed
+
+- `unicorn/no-asterisk-prefix-in-documentation-comments` (new in unicorn v78) is disabled, it conflicts with the JSDoc comment style expected by `eslint-plugin-jsdoc` and enforced by `jsdocRequireJsdoc`
+
 ## [3.1.0] - 2026-10-15
 
 ### Added

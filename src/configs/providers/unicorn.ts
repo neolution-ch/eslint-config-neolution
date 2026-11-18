@@ -6,7 +6,7 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
   {
     name: "neolution/unicorn",
     rules: {
-      "unicorn/prevent-abbreviations": "off",
+      "unicorn/name-replacements": "off",
       "unicorn/filename-case": "off",
       "unicorn/no-await-expression-member": "off",
       "unicorn/prefer-node-protocol": "off",
@@ -15,6 +15,11 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
       "unicorn/prefer-query-selector": "off",
       "unicorn/switch-case-braces": "off",
       "unicorn/no-null": "off",
+
+      // Conflicts with the JSDoc comment style that eslint-plugin-jsdoc expects
+      // (and that `jsdocRequireJsdoc` enforces): it removes the leading `*` of every
+      // line in a documentation comment.
+      "unicorn/no-asterisk-prefix-in-documentation-comments": "off",
       "unicorn/no-useless-undefined": [
         "error",
         { checkArrowFunctionBody: false },
@@ -25,14 +30,22 @@ const rules: TSESLint.FlatConfig.ConfigArray = [
     name: "neolution/unicorn/pages",
     files: ["**/pages/**/*.page.tsx"],
     rules: {
-      "unicorn/filename-case": ["error", { case: "kebabCase" }],
+      "unicorn/filename-case": [
+        "error",
+        // since unicorn v78 directory names are checked too, only the file name is meant here
+        { case: "kebabCase", checkDirectories: false },
+      ],
     },
   },
   {
     name: "neolution/unicorn/components",
     files: ["**/components/**/*.tsx"],
     rules: {
-      "unicorn/filename-case": ["error", { case: "pascalCase" }],
+      "unicorn/filename-case": [
+        "error",
+        // since unicorn v78 directory names are checked too, only the file name is meant here
+        { case: "pascalCase", checkDirectories: false },
+      ],
     },
   },
   {
