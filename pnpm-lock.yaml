@@ -17,6 +17,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.5.26
         version: 15.5.26
+      '@typescript-eslint/utils':
+        specifier: ^8.70.1
+        version: 8.70.1(eslint@10.11.0(jiti@2.6.1))(typescript@5.9.3)
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@10.11.0(jiti@2.6.1))
@@ -66,9 +69,6 @@ importers:
       '@types/node':
         specifier: ^25.9.8
         version: 25.9.8
-      '@typescript-eslint/utils':
-        specifier: ^8.70.1
-        version: 8.70.1(eslint@10.11.0(jiti@2.6.1))(typescript@5.9.3)
       eslint:
         specifier: ^10.8.0
         version: 10.11.0(jiti@2.6.1)
