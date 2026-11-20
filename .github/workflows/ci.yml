@@ -82,7 +82,7 @@ jobs:
       # The config supports ESLint 9 and 10, whose type declarations differ, so tsc and the
       # lint run again against the newest ESLint 9.
       - name: Install ESLint 9
-        run: pnpm add --save-dev eslint@9
+        run: pnpm add --save-dev eslint@9 # zizmor: ignore[adhoc-packages] the newest ESLint 9 within the minimumReleaseAge floor, installed in a job without credentials
 
       - name: Lint with ESLint 9
         run: pnpm run lint
