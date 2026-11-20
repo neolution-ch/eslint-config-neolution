@@ -1,8 +1,10 @@
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
-import type { InfiniteDepthConfigWithExtends } from "typescript-eslint";
-import type { TSESLint } from "@typescript-eslint/utils";
+import type {
+  ConfigWithExtends,
+  InfiniteDepthConfigWithExtends,
+} from "typescript-eslint";
 
-const rules: TSESLint.FlatConfig.ConfigArray = [
+const rules: ConfigWithExtends[] = [
   {
     name: "neolution/unicorn",
     rules: {
