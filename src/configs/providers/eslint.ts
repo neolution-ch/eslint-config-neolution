@@ -3,7 +3,7 @@ import esLint from "@eslint/js";
 const esLintRules: InfiniteDepthConfigWithExtends = [
   { name: "eslint/recommended", ...esLint.configs.recommended },
   {
-    name: "neolution/eslint",
+    name: "@collana-solutions/eslint",
     rules: {
       // @eslint/js v10 only adds these rules to the recommended config, but it declares
       // a peer dependency on eslint v10. We stay on v9 and enable them here, so the

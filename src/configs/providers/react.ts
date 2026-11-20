@@ -22,7 +22,7 @@ const reactRulesRecommended: InfiniteDepthConfigWithExtends = [
     plugins: { react: reactPlugin },
   },
   {
-    name: "neolution/react",
+    name: "@collana-solutions/react",
     rules: {
       // Prefer arrow functions for components
       "react/function-component-definition": [
@@ -49,7 +49,7 @@ const reactRulesJsx: InfiniteDepthConfigWithExtends = [
     plugins: { react: reactPlugin },
   },
   {
-    name: "neolution/react/jsx",
+    name: "@collana-solutions/react/jsx",
     rules: {
       "react/jsx-filename-extension": [
         "error",

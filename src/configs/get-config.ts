@@ -107,14 +107,14 @@ const getConfig = (ruleConfig: ConfigurationType) => {
 
   if (includeonlyError) {
     configs.push({
-      name: "neolution/only-error",
+      name: "@collana-solutions/only-error",
       plugins: { "only-error": onlyError },
     });
   }
 
   if (includeonlyNoOnlyTests) {
     configs.push({
-      name: "neolution/no-only-tests",
+      name: "@collana-solutions/no-only-tests",
       plugins: {
         "no-only-tests": noOnlyTests,
       },

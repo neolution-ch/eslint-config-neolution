@@ -14,7 +14,7 @@ const reactHooksRules: InfiniteDepthConfigWithExtends = [
     ...reactHooksPlugin.configs.flat.recommended,
   },
   {
-    name: "neolution/react-hooks",
+    name: "@collana-solutions/react-hooks",
     rules: {
       "react-hooks/rules-of-hooks": "error",
     },

@@ -1,12 +1,12 @@
-# eslint-config-neolution
+# @collana-solutions/eslint-config
 
-This package provides Neolution's eslint.config.js as an extensible shared config.
+This package provides the `eslint.config.js` of collana solutions as an extensible shared config.
 
 ## Installation
 
 ```sh
 # inside your project's working tree
-yarn add -D @neolution-ch/eslint-config-neolution eslint prettier eslint-plugin-prettier typescript@~6.0.0
+yarn add -D @collana-solutions/eslint-config eslint prettier eslint-plugin-prettier typescript@~6.0.0
 ```
 
 ### Requirements
@@ -26,9 +26,9 @@ yarn add -D @neolution-ch/eslint-config-neolution eslint prettier eslint-plugin-
 Edit the `eslint.config.mjs` of your project:
 
 ```js
-import neolutionEslintConfig from "@neolution-ch/eslint-config-neolution";
+import collanaEslintConfig from "@collana-solutions/eslint-config";
 
-export default [...neolutionEslintConfig.configs.flat.nextjs];
+export default [...collanaEslintConfig.configs.flat.nextjs];
 ```
 
 ### Configs
@@ -52,9 +52,9 @@ export default [...neolutionEslintConfig.configs.flat.nextjs];
 To use a config without the prettier rules, build it with `getConfig` and disable `prettierRecommended`. `prettier` and `eslint-plugin-prettier` don't need to be installed then:
 
 ```js
-import neolutionEslintConfig from "@neolution-ch/eslint-config-neolution";
+import collanaEslintConfig from "@collana-solutions/eslint-config";
 
-const { getConfig, defaults } = neolutionEslintConfig.configs.flat;
+const { getConfig, defaults } = collanaEslintConfig.configs.flat;
 
 export default getConfig({ ...defaults.nextjs, prettierRecommended: false });
 ```

@@ -4,7 +4,7 @@ import { InfiniteDepthConfigWithExtends } from "typescript-eslint";
 const jsdocRules = [
   index.configs["flat/recommended"],
   {
-    name: "neolution/jsdoc",
+    name: "@collana-solutions/jsdoc",
     rules: {
       "jsdoc/require-param-type": "off",
       "jsdoc/require-returns-type": "off",
@@ -16,7 +16,7 @@ const jsdocRules = [
 
 const jsdocRequireRules = [
   {
-    name: "neolution/jsdoc/require-jsdoc",
+    name: "@collana-solutions/jsdoc/require-jsdoc",
     ignores: ["**/*.spec.ts"],
     rules: {
       "jsdoc/require-jsdoc": [

@@ -1,3 +1,7 @@
-import neolutionEslintConfig from "./dist/index.js";
+import collanaEslintConfig from "./dist/index.js";
 
-export default [...neolutionEslintConfig.configs.flat.typescript];
+export default [
+  // scripts/ holds the release tooling copied from the release playbook, kept identical to its template.
+  { ignores: ["scripts/"] },
+  ...collanaEslintConfig.configs.flat.typescript,
+];
