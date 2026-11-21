@@ -26,7 +26,7 @@ const loadPrettierRules = (): InfiniteDepthConfigWithExtends => {
 
   if (missingPackages.length > 0) {
     throw new Error(
-      `@neolution-ch/eslint-config-neolution: the prettier rules require ${prettierPackages.join(" and ")} to be installed (missing: ${missingPackages.join(", ")}). Install them, or disable the rules with getConfig({ ...defaults, prettierRecommended: false }).`,
+      `@collana-solutions/eslint-config: the prettier rules require ${prettierPackages.join(" and ")} to be installed (missing: ${missingPackages.join(", ")}). Install them, or disable the rules with getConfig({ ...defaults, prettierRecommended: false }).`,
     );
   }
 

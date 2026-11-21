@@ -9,7 +9,7 @@ import { importX, flatConfigs } from "eslint-plugin-import-x";
 // comments and rule overrides in consuming projects working unchanged.
 const importRules: InfiniteDepthConfigWithExtends = [
   {
-    name: "neolution/import",
+    name: "@collana-solutions/import",
     plugins: { import: importX },
     rules: Object.fromEntries(
       Object.entries(flatConfigs.recommended.rules ?? {}).map(
